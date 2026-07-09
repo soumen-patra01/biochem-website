@@ -196,11 +196,45 @@
     .form-textarea{padding:12px 14px;border:0.5px solid #e0e0e0;font-family:'Montserrat',sans-serif;font-size:13px;color:#111;outline:none;resize:vertical;min-height:120px;transition:border .2s}
     .form-textarea:focus{border-color:#111}
     .contact-info{display:flex;flex-direction:column;gap:24px}
-    .contact-card{border:0.5px solid #e0e0e0;padding:24px}
+    .contact-card{
+      border:0.5px solid #e0e0e0;
+      padding:24px;
+      border-radius:12px;
+      transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      background:#fff;
+      cursor:default;
+    }
+    .contact-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 12px 32px rgba(0,0,0,0.10);
+      border-color:#111;
+    }
     .contact-card-title{font-size:13px;font-weight:600;color:#111;letter-spacing:0.5px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
     .contact-card-detail{font-size:13px;color:#888;line-height:1.9}
-    .whatsapp-btn{background:#25D366;color:#fff;font-size:12px;font-weight:600;padding:12px 24px;border:none;cursor:pointer;letter-spacing:1px;display:inline-flex;align-items:center;gap:8px;margin-top:8px;transition:background .2s;text-decoration:none;font-family:'Montserrat',sans-serif}
-    .whatsapp-btn:hover{background:#128C7E}
+    .whatsapp-btn{
+      background:#25D366;
+      color:#fff;
+      font-size:12px;
+      font-weight:600;
+      padding:12px 28px;
+      border:none;
+      cursor:pointer;
+      letter-spacing:1px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:8px;
+      transition:background .3s ease, transform .3s ease, box-shadow .3s ease;
+      text-decoration:none;
+      font-family:'Montserrat',sans-serif;
+      border-radius:50px;
+      box-shadow:0 4px 15px rgba(37,211,102,0.35);
+    }
+    .whatsapp-btn:hover{
+      background:#128C7E;
+      transform:translateY(-2px) scale(1.04);
+      box-shadow:0 8px 24px rgba(37,211,102,0.45);
+    }
 
     /* ── ABOUT PAGE ── */
     .about-story{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
