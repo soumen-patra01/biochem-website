@@ -310,29 +310,106 @@
     .footer-link-btn:hover{color:#fff}
 
     /* ── RESPONSIVE ── */
-    @media(max-width:768px){
+    /* ── TABLET (768px – 1024px) ── */
+    @media(min-width:768px) and (max-width:1024px){
+      .navbar{padding:0 24px}
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .hero{padding:48px 24px;grid-template-columns:1fr;gap:32px}
+      .hero h1{font-size:28px}
+      .stats-grid{grid-template-columns:repeat(4,1fr)}
+      .section,.section-dark,.section-light{padding:48px 24px}
+      .about-grid{grid-template-columns:1fr;gap:32px}
+      .products-grid{grid-template-columns:1fr 1fr}
+      .why-grid{grid-template-columns:1fr 1fr;gap:16px}
+      .testi-grid{grid-template-columns:1fr 1fr;gap:16px}
+      .why-full-grid{grid-template-columns:1fr 1fr}
+      .clients-full-grid{grid-template-columns:1fr 1fr 1fr}
+      .contact-grid{grid-template-columns:1fr;gap:32px}
+      .about-story{grid-template-columns:1fr;gap:32px}
+      .location-grid{grid-template-columns:1fr 1fr}
+      .cta-section{flex-direction:column;text-align:center;padding:48px 24px}
+      .cta-btns{justify-content:center}
+      .footer{padding:32px 24px;flex-direction:column;gap:24px}
+      .footer-offices{flex-direction:row;gap:32px}
+      .variants-grid{grid-template-columns:1fr 1fr}
+      .group-header,.variant-item{padding-left:24px;padding-right:24px}
+      .product-hero,.page-header,.why-hero{padding:48px 24px}
+      .about-values{grid-template-columns:1fr 1fr}
+      .heading{font-size:26px}
+      .heading-white{font-size:26px}
+      .hero-btns{flex-direction:row;gap:12px}
+      body{overflow-x:hidden}
+    }
+
+    /* ── MOBILE (max 767px) ── */
+    @media(max-width:767px){
+      body{overflow-x:hidden}
       .navbar{padding:0 20px}
       .nav-links{display:none}
       .hamburger{display:flex}
-      .hero,.about-grid,.about-story,.contact-grid,.location-grid{grid-template-columns:1fr}
-      .section,.section-dark,.section-light{padding:40px 20px}
-      .hero{padding:40px 20px}
-      .products-grid{grid-template-columns:1fr 1fr}
-      .why-grid,.testi-grid,.why-full-grid{grid-template-columns:1fr}
-      .cta-section{flex-direction:column;text-align:center;padding:40px 20px}
-      .footer{padding:32px 20px}
-      .footer-offices{flex-direction:column;gap:24px}
-      .variants-grid{grid-template-columns:1fr}
-      .clients-full-grid{grid-template-columns:1fr 1fr}
-      .group-header,.variant-item{padding-left:20px;padding-right:20px}
-      .product-hero{padding:40px 20px}
-      .page-header{padding:40px 20px}
-      .about-values{grid-template-columns:1fr}
-      .heading{font-size:22px}
-      .heading-white{font-size:22px}
-      .hero h1{font-size:24px}
+
+      /* Hero */
+      .hero{padding:36px 20px;grid-template-columns:1fr;gap:28px}
+      .hero h1{font-size:22px;line-height:1.4}
+      .hero p{font-size:13px}
+      .hero-tag{font-size:9px}
+      .hero-btns{flex-direction:column;gap:10px}
+      .hero-btns .btn-primary,
+      .hero-btns .btn-outline{width:100%;text-align:center;justify-content:center}
+      .stats-grid{grid-template-columns:1fr 1fr}
       .stat-num{font-size:28px}
+
+      /* Sections */
+      .section,.section-dark,.section-light{padding:36px 20px}
+      .heading{font-size:20px}
+      .heading-white{font-size:20px}
+
+      /* About */
+      .about-grid{grid-template-columns:1fr;gap:28px}
+      .about-story{grid-template-columns:1fr;gap:28px}
+      .about-values{grid-template-columns:1fr}
+
+      /* Products */
+      .products-grid{grid-template-columns:1fr 1fr}
+      .prod-card{padding:20px 16px}
+      .prod-name{font-size:12px}
+      .prod-desc{font-size:11px}
+
+      /* Why */
+      .why-grid{grid-template-columns:1fr;gap:12px}
+      .why-full-grid{grid-template-columns:1fr}
+
+      /* Clients */
+      .clients-full-grid{grid-template-columns:1fr 1fr}
+      .clients-row{gap:8px}
+      .client-pill{font-size:10px;padding:6px 14px}
+
+      /* Testimonials */
+      .testi-grid{grid-template-columns:1fr;gap:16px}
+
+      /* CTA */
+      .cta-section{flex-direction:column;text-align:center;padding:36px 20px;gap:20px}
+      .cta-btns{flex-direction:column;gap:10px;width:100%}
+      .cta-btns .btn-primary,
+      .cta-btns .btn-dark{width:100%;text-align:center;justify-content:center}
       .cta-text h2{font-size:18px}
+
+      /* Contact */
+      .contact-grid{grid-template-columns:1fr;gap:28px}
+      .form-row{grid-template-columns:1fr}
+
+      /* Footer */
+      .footer{padding:28px 20px;flex-direction:column;gap:20px}
+      .footer-offices{flex-direction:column;gap:16px}
+
+      /* Product pages */
+      .variants-grid{grid-template-columns:1fr}
+      .group-header,.variant-item{padding-left:20px;padding-right:20px}
+      .product-hero,.page-header,.why-hero{padding:36px 20px}
+
+      /* Location */
+      .location-grid{grid-template-columns:1fr;gap:16px}
     }
   </style>
 </head>
