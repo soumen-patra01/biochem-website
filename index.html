@@ -1364,28 +1364,29 @@
       btn.disabled     = true;
       btn.textContent  = 'SENDING...';
 
+      const firstName = form.firstName.value.trim();
+      const lastName  = form.lastName.value.trim();
+      const company   = form.company.value.trim();
+
       const data = {
-        firstName : form.firstName.value,
-        lastName  : form.lastName.value,
-        company   : form.company.value,
-        email     : form.email.value,
-        phone     : form.phone.value,
-        message   : form.message.value,
-        _replyto  : form.email.value,
-        _subject  : 'New Enquiry from ' + form.firstName.value + ' - ' + form.company.value,
-        _cc       : 'saikat@biochemtechnologies.com'
+        'First Name'   : firstName,
+        'Last Name'    : lastName,
+        'Company'      : company,
+        'Email'        : form.email.value.trim(),
+        'Phone'        : form.phone.value.trim(),
+        'Message'      : form.message.value.trim(),
+        '_replyto'     : form.email.value.trim(),
+        '_subject'     : 'New Enquiry: ' + firstName + ' ' + lastName + ' | ' + company,
+        '_cc'          : 'saikat@biochemtechnologies.com',
+        '_captcha'     : 'false',
+        '_template'    : 'table'
       };
 
       try {
         const res = await fetch('https://formsubmit.co/ajax/sales@biochemtechnologies.com', {
           method  : 'POST',
           headers : { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body    : JSON.stringify({
-            ...data,
-            _cc      : 'saikat@biochemtechnologies.com',
-            _subject : 'New Enquiry: ' + data.firstName + ' ' + data.lastName + ' | ' + data.company,
-            _captcha : 'false'
-          })
+          body    : JSON.stringify(data)
         });
 
         if (res.ok) {
