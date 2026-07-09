@@ -1174,10 +1174,19 @@
                 ></textarea>
               </div>
 
-              <!-- type="submit" (was missing) -->
-              <button type="submit" class="btn-primary" style="background:#111;color:#fff;width:100%;padding:14px;font-size:12px">
+              <button type="submit" id="submitBtn" class="btn-primary" style="background:#111;color:#fff;width:100%;padding:14px;font-size:12px">
                 SEND MESSAGE
               </button>
+
+              <!-- Success / Error messages -->
+              <div id="formSuccess" style="display:none;background:#f0fff4;border:1px solid #25D366;border-radius:8px;padding:16px;text-align:center;margin-top:8px">
+                <p style="color:#128C7E;font-size:13px;font-weight:600;">✅ Message Sent Successfully!</p>
+                <p style="color:#444;font-size:12px;margin-top:4px">We will get back to you within 24 hours.</p>
+              </div>
+              <div id="formError" style="display:none;background:#fff5f5;border:1px solid #e53e3e;border-radius:8px;padding:16px;text-align:center;margin-top:8px">
+                <p style="color:#e53e3e;font-size:13px;font-weight:600;">❌ Something went wrong.</p>
+                <p style="color:#444;font-size:12px;margin-top:4px">Please try again or contact us directly on WhatsApp.</p>
+              </div>
             </form>
           </div>
 
@@ -1335,17 +1344,62 @@
     }
 
     /* ── CONTACT FORM SUBMIT ── */
-    function handleFormSubmit(event) {
+    async function handleFormSubmit(event) {
       event.preventDefault();
       const form = event.target;
       if (!form.checkValidity()) {
-        // Let native browser validation show messages
         form.reportValidity();
         return;
       }
-      // TODO: wire up to your backend / email service
-      alert('Thank you! We will get back to you within 24 hours.');
-      form.reset();
+
+      const btn     = document.getElementById('submitBtn');
+      const success = document.getElementById('formSuccess');
+      const error   = document.getElementById('formError');
+
+      // Hide previous messages
+      success.style.display = 'none';
+      error.style.display   = 'none';
+
+      // Show loading state
+      btn.disabled     = true;
+      btn.textContent  = 'SENDING...';
+
+      const data = {
+        firstName : form.firstName.value,
+        lastName  : form.lastName.value,
+        company   : form.company.value,
+        email     : form.email.value,
+        phone     : form.phone.value,
+        message   : form.message.value,
+        _replyto  : form.email.value,
+        _subject  : 'New Enquiry from ' + form.firstName.value + ' - ' + form.company.value,
+        _cc       : 'saikat@biochemtechnologies.com'
+      };
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/sales@biochemtechnologies.com', {
+          method  : 'POST',
+          headers : { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body    : JSON.stringify({
+            ...data,
+            _cc      : 'saikat@biochemtechnologies.com',
+            _subject : 'New Enquiry: ' + data.firstName + ' ' + data.lastName + ' | ' + data.company,
+            _captcha : 'false'
+          })
+        });
+
+        if (res.ok) {
+          success.style.display = 'block';
+          form.reset();
+        } else {
+          error.style.display = 'block';
+        }
+      } catch (e) {
+        error.style.display = 'block';
+      }
+
+      btn.disabled    = false;
+      btn.textContent = 'SEND MESSAGE';
     }
 
     /* ── CLOSE MOBILE MENU ON OUTSIDE CLICK ── */
