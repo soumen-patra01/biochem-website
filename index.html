@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO & social meta (new) -->
+  <meta name="description" content="Biochem Technologies — High-performance textile chemicals manufacturer covering pre-treatment, dyeing, printing, and finishing auxiliaries for mills across India.">
+  <meta name="theme-color" content="#111111">
+
+  <!-- Open Graph (new) -->
+  <meta property="og:title" content="Biochem Technologies | Textile Chemicals Manufacturer">
+  <meta property="og:description" content="Premium textile chemicals for pre-treatment, dyeing, printing and finishing. Serving mills across India since 2023.">
+  <meta property="og:type" content="website">
+
+  <title>Biochem Technologies | Textile Chemicals Manufacturer</title>
+
+  <!-- Preconnect for faster font loading (new) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Montserrat',sans-serif;background:#fff;color:#111}
+    a{text-decoration:none;color:inherit}
+
+    /* ── SKIP LINK (new – keyboard/screen-reader accessibility) ── */
+    .skip-link{position:absolute;top:-999px;left:0;background:#fff;color:#111;padding:8px 16px;font-size:12px;font-weight:600;z-index:9999;text-decoration:none;letter-spacing:1px}
+    .skip-link:focus{top:0}
+
+    /* ── BUTTON RESETS (new – nav uses <button> instead of <span>) ── */
+    button.nav-link,
+    button.dropdown-item,
+    button.mobile-link,
+    button.mobile-sublink{
+      background:none;border:none;
+      font-family:'Montserrat',sans-serif;
+      width:100%;text-align:left;cursor:pointer;
+    }
+    button.nav-link{width:auto}
+
+    /* ── NAVBAR ── */
+    .navbar{background:#111;padding:0 48px;display:flex;justify-content:space-between;align-items:center;height:64px;position:sticky;top:0;z-index:999}
+    .nav-logo{color:#fff;font-size:14px;font-weight:600;letter-spacing:3px;cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif}
+    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-item{position:relative}
+    .nav-link{color:#ccc;font-size:11px;letter-spacing:1.5px;cursor:pointer;padding:4px 0;transition:color .2s}
+    .nav-link:hover,.nav-link.active{color:#fff;border-bottom:1.5px solid #fff;padding-bottom:2px}
+
+    /* Dropdown – now uses <ul> list markup */
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:#111;min-width:180px;border:0.5px solid #333;z-index:1000;margin-top:16px;list-style:none}
+    .nav-item:hover .dropdown{display:block}
+    .dropdown-item{display:block;padding:12px 16px;color:#ccc;font-size:11px;letter-spacing:1px;cursor:pointer;border-bottom:0.5px solid #222;transition:color .2s,background .2s;text-align:left}
+    .dropdown-item:hover{color:#fff;background:#1a1a1a}
+
+    /* ── HAMBURGER ── */
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+    .hamburger span{display:block;width:24px;height:2px;background:#fff;transition:all .3s}
+    .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu{display:none;position:fixed;top:64px;left:0;width:100%;background:#111;z-index:998;border-top:1px solid #222;flex-direction:column;padding:16px 0}
+    .mobile-menu.open{display:flex}
+    .mobile-link{color:#ccc;font-size:12px;letter-spacing:1.5px;padding:14px 24px;cursor:pointer;border-bottom:0.5px solid #1a1a1a;transition:color .2s,background .2s;text-transform:uppercase}
+    .mobile-link:hover,.mobile-link.active{color:#fff;background:#1a1a1a}
+    .mobile-submenu{background:#0a0a0a;list-style:none}
+    .mobile-sublink{color:#888;font-size:11px;letter-spacing:1px;padding:12px 36px;cursor:pointer;border-bottom:0.5px solid #1a1a1a;transition:color .2s;display:block}
+    .mobile-sublink:hover{color:#fff}
+    .mobile-contact-btn{margin:16px 24px 8px;background:#fff;color:#111;font-size:11px;font-weight:600;padding:12px 20px;letter-spacing:1.5px;border:none;cursor:pointer;text-align:center;font-family:'Montserrat',sans-serif}
+
+    /* ── PAGES ── */
+    .page{display:none}
+    .page.active{display:block}
+
+    /* ── SECTIONS ── */
+    .section{padding:64px 48px}
+    .section-dark{background:#111;padding:64px 48px}
+    .section-light{background:#f9f9f9;padding:64px 48px}
+    .eyebrow{font-size:11px;letter-spacing:2px;color:#888;margin-bottom:10px;text-transform:uppercase}
+    .eyebrow-white{font-size:11px;letter-spacing:2px;color:#666;margin-bottom:10px;text-transform:uppercase}
+    .heading{font-size:30px;font-weight:500;color:#111;line-height:1.3;margin-bottom:12px}
+    .heading-white{font-size:30px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:12px}
+    .subtext{font-size:13px;color:#888;line-height:1.9;margin-bottom:32px}
+    .subtext-white{font-size:13px;color:#888;line-height:1.9;margin-bottom:32px}
+    .divider-line{width:44px;height:2px;background:#111;margin:14px 0 28px}
+    .divider-white{width:44px;height:2px;background:#fff;margin:14px 0 28px}
+
+    /* ── HERO ── */
+    .hero{background:#111;padding:72px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;border-bottom:3px solid #fff}
+    .hero-tag{display:inline-block;border:1px solid #555;color:#aaa;font-size:10px;letter-spacing:2px;padding:4px 12px;margin-bottom:18px;text-transform:uppercase}
+    .hero h1{color:#fff;font-size:36px;font-weight:500;line-height:1.3;letter-spacing:0.5px;margin-bottom:16px}
+    .hero p{color:#aaa;font-size:13px;line-height:1.9;margin-bottom:28px}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{background:#fff;color:#111;font-size:11px;font-weight:600;padding:12px 26px;border:none;letter-spacing:1.5px;cursor:pointer;transition:background .2s;font-family:'Montserrat',sans-serif}
+    .btn-primary:hover{background:#e0e0e0}
+    .btn-outline{background:transparent;color:#fff;font-size:11px;font-weight:500;padding:12px 26px;border:1.5px solid #fff;letter-spacing:1.5px;cursor:pointer;transition:all .2s;font-family:'Montserrat',sans-serif}
+    .btn-outline:hover{background:#fff;color:#111}
+    .btn-dark{background:#111;color:#fff;font-size:11px;font-weight:600;padding:12px 26px;border:1.5px solid #fff;letter-spacing:1.5px;cursor:pointer;transition:all .2s;font-family:'Montserrat',sans-serif}
+    .btn-dark:hover{background:#222}
+
+    /* Stats – uses <dl> semantics (updated) */
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#333}
+    .stat-cell{background:#111;padding:32px 20px;text-align:center}
+    .stat-num{color:#fff;font-size:36px;font-weight:500;margin-bottom:8px;display:block}
+    .stat-lbl{color:#888;font-size:10px;letter-spacing:2px;text-transform:uppercase;display:block}
+
+    /* ── ABOUT ── */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .about-text p{font-size:13px;color:#444;line-height:1.9;margin-bottom:16px}
+    .about-points{display:flex;flex-direction:column;gap:12px;list-style:none}
+    .about-point{display:flex;align-items:flex-start;gap:14px;padding:16px;border:0.5px solid #e0e0e0}
+    .point-icon{background:#111;color:#fff;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;aria-hidden:true}
+    .point-title{font-size:13px;font-weight:600;color:#111;margin-bottom:4px}
+    .point-text{font-size:12px;color:#888;line-height:1.6}
+
+    /* ── PRODUCTS GRID ── */
+    .products-grid{display:grid;grid-template-columns:repeat(4,1fr);border:0.5px solid #e0e0e0}
+    .prod-card{padding:28px 24px;border-right:0.5px solid #e0e0e0;display:flex;flex-direction:column;cursor:pointer;transition:background .2s;background:none;border-top:none;border-bottom:none;font-family:'Montserrat',sans-serif;text-align:left;width:100%}
+    .prod-card:last-child{border-right:none}
+    .prod-card:hover{background:#f5f5f5}
+    .prod-card:focus-visible{outline:2px solid #111;outline-offset:-2px}
+    .prod-icon{font-size:26px;color:#111;margin-bottom:16px}
+    .prod-name{font-size:14px;font-weight:700;color:#111;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase}
+    .prod-desc{font-size:12px;color:#888;line-height:1.8;margin-bottom:20px;flex:1}
+    .prod-link{font-size:11px;color:#111;letter-spacing:1.5px;border-bottom:1.5px solid #111;padding-bottom:2px;display:inline-block;text-transform:uppercase}
+
+    /* ── WHY BIOCHEM ── */
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none}
+    .why-card{border:0.5px solid #333;padding:28px 24px}
+    .why-icon{font-size:24px;color:#fff;margin-bottom:14px}
+    .why-title{color:#fff;font-size:14px;font-weight:600;letter-spacing:0.5px;margin-bottom:10px}
+    .why-text{color:#888;font-size:13px;line-height:1.8}
+
+    /* ── CLIENTS ── */
+    .clients-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;list-style:none}
+    .client-pill{background:#fff;border:0.5px solid #ddd;padding:8px 18px;font-size:11px;color:#444;letter-spacing:0.5px}
+
+    /* ── TESTIMONIALS – now uses <figure>/<blockquote> ── */
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .testi-card{border:0.5px solid #e0e0e0;padding:28px 24px;margin:0}
+    .testi-quote{font-size:13px;color:#444;line-height:1.9;font-style:italic;margin-bottom:18px;border-left:3px solid #111;padding-left:16px}
+    .testi-name{font-size:12px;font-weight:600;color:#111;letter-spacing:0.5px;display:block;font-style:normal}
+    .testi-role{font-size:11px;color:#888;margin-top:4px;display:block}
+
+    /* ── CTA ── */
+    .cta-section{background:#111;padding:64px 48px;display:flex;justify-content:space-between;align-items:center;gap:32px}
+    .cta-text h2{color:#fff;font-size:22px;font-weight:500;margin-bottom:8px}
+    .cta-text p{color:#888;font-size:13px}
+    .cta-btns{display:flex;gap:12px;flex-shrink:0}
+
+    /* ── FOOTER ── */
+    .footer{background:#111;border-top:1px solid #222;padding:32px 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+    .footer-logo{color:#fff;font-size:13px;font-weight:600;letter-spacing:3px;margin-bottom:8px}
+    .footer-tagline{color:#555;font-size:11px}
+    .footer-offices{display:flex;gap:48px}
+    .office-city{color:#fff;font-size:11px;letter-spacing:1.5px;margin-bottom:6px;text-transform:uppercase}
+    .office-detail{color:#666;font-size:11px;line-height:1.8}
+    .footer-copy{color:#444;font-size:11px;margin-top:24px;padding-top:24px;border-top:0.5px solid #222;text-align:center;width:100%;letter-spacing:0.5px}
+
+    /* ── BREADCRUMB (updated to use <ol>) ── */
+    .breadcrumb{font-size:10px;letter-spacing:1.5px;color:#666;margin-bottom:16px;text-transform:uppercase}
+    .breadcrumb ol{list-style:none;display:flex;gap:6px;align-items:center}
+    .breadcrumb li{display:inline}
+    .breadcrumb li+li::before{content:" / ";color:#666}
+    .breadcrumb a{color:#666;text-decoration:none}
+    .breadcrumb a:hover{color:#fff}
+    .breadcrumb [aria-current="page"]{color:#fff}
+
+    /* ── PRODUCT SUB PAGES ── */
+    .product-hero{background:#111;padding:48px;border-bottom:3px solid #fff}
+    .product-group{border-bottom:0.5px solid #e0e0e0}
+    .group-header{background:#111;padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
+    .group-header.alt{background:#fff;border-left:4px solid #111;padding-left:44px}
+    .group-name{color:#fff;font-size:14px;font-weight:500;letter-spacing:2px;text-transform:uppercase}
+    .group-name.dark{color:#111}
+    .group-sub{font-size:11px;color:#888;margin-top:4px}
+    .group-badge{background:#fff;color:#111;font-size:10px;font-weight:600;padding:4px 12px;letter-spacing:1px;text-transform:uppercase}
+    .group-badge.dark{background:#111;color:#fff}
+    .variants-grid{display:grid;grid-template-columns:1fr 1fr;list-style:none}
+    .variant-item{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:0.5px solid #eee;border-right:0.5px solid #eee;background:#fff}
+    .variant-item.alt{background:#fafafa}
+    .variant-name{font-size:13px;color:#111;letter-spacing:0.5px}
+    .variant-tag{font-size:10px;color:#888;border:0.5px solid #ccc;padding:3px 10px;letter-spacing:0.5px}
+
+    /* ── CONTACT ── */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+    .contact-form{display:flex;flex-direction:column;gap:16px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-label{font-size:11px;color:#111;letter-spacing:1px;text-transform:uppercase}
+    .form-input{padding:12px 14px;border:0.5px solid #e0e0e0;font-family:'Montserrat',sans-serif;font-size:13px;color:#111;outline:none;transition:border .2s}
+    .form-input:focus{border-color:#111}
+    .form-textarea{padding:12px 14px;border:0.5px solid #e0e0e0;font-family:'Montserrat',sans-serif;font-size:13px;color:#111;outline:none;resize:vertical;min-height:120px;transition:border .2s}
+    .form-textarea:focus{border-color:#111}
+    .contact-info{display:flex;flex-direction:column;gap:24px}
+    .contact-card{border:0.5px solid #e0e0e0;padding:24px}
+    .contact-card-title{font-size:13px;font-weight:600;color:#111;letter-spacing:0.5px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+    .contact-card-detail{font-size:13px;color:#888;line-height:1.9}
+    .whatsapp-btn{background:#25D366;color:#fff;font-size:12px;font-weight:600;padding:12px 24px;border:none;cursor:pointer;letter-spacing:1px;display:inline-flex;align-items:center;gap:8px;margin-top:8px;transition:background .2s;text-decoration:none;font-family:'Montserrat',sans-serif}
+    .whatsapp-btn:hover{background:#128C7E}
+
+    /* ── ABOUT PAGE ── */
+    .about-story{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+    .about-story-text p{font-size:14px;color:#444;line-height:2;margin-bottom:18px}
+    .about-values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px;list-style:none}
+    .value-card{border:0.5px solid #e0e0e0;padding:20px}
+    .value-icon{font-size:22px;color:#111;margin-bottom:10px}
+    .value-title{font-size:13px;font-weight:600;color:#111;margin-bottom:6px}
+    .value-text{font-size:12px;color:#888;line-height:1.7}
+    .location-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+    .location-card{background:#111;padding:28px}
+    .location-city{color:#fff;font-size:16px;font-weight:500;letter-spacing:2px;margin-bottom:4px;text-transform:uppercase}
+    .location-detail{color:#888;font-size:13px;line-height:1.9}
+
+    /* ── WHY PAGE ── */
+    .why-hero{background:#111;padding:64px 48px;border-bottom:3px solid #fff}
+    .why-full-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:0.5px solid #e0e0e0;list-style:none}
+    .why-full-card{padding:36px 28px;border-right:0.5px solid #e0e0e0;border-bottom:0.5px solid #e0e0e0}
+    .why-full-card:nth-child(3n){border-right:none}
+    .why-full-icon{font-size:28px;color:#111;margin-bottom:16px}
+    .why-full-title{font-size:15px;font-weight:600;color:#111;margin-bottom:10px}
+    .why-full-text{font-size:13px;color:#888;line-height:1.9}
+
+    /* ── CLIENTS PAGE ── */
+    .clients-full-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;list-style:none}
+    .client-card{border:0.5px solid #e0e0e0;padding:24px;text-align:center}
+    .client-name{font-size:13px;font-weight:600;color:#111;margin-bottom:6px;letter-spacing:0.5px}
+    .client-type{font-size:11px;color:#888}
+
+    /* ── PAGE HEADER ── */
+    .page-header{background:#111;padding:48px;border-bottom:3px solid #fff}
+
+    /* ── FOOTER QUICK LINKS ── */
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .footer-link-btn{background:none;border:none;color:#666;font-size:11px;cursor:pointer;text-align:left;font-family:'Montserrat',sans-serif;padding:0}
+    .footer-link-btn:hover{color:#fff}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px){
+      .navbar{padding:0 20px}
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .hero,.about-grid,.about-story,.contact-grid,.location-grid{grid-template-columns:1fr}
+      .section,.section-dark,.section-light{padding:40px 20px}
+      .hero{padding:40px 20px}
+      .products-grid{grid-template-columns:1fr 1fr}
+      .why-grid,.testi-grid,.why-full-grid{grid-template-columns:1fr}
+      .cta-section{flex-direction:column;text-align:center;padding:40px 20px}
+      .footer{padding:32px 20px}
+      .footer-offices{flex-direction:column;gap:24px}
+      .variants-grid{grid-template-columns:1fr}
+      .clients-full-grid{grid-template-columns:1fr 1fr}
+      .group-header,.variant-item{padding-left:20px;padding-right:20px}
+      .product-hero{padding:40px 20px}
+      .page-header{padding:40px 20px}
+      .about-values{grid-template-columns:1fr}
+      .heading{font-size:22px}
+      .heading-white{font-size:22px}
+      .hero h1{font-size:24px}
+      .stat-num{font-size:28px}
+      .cta-text h2{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip to main content (new – keyboard & screen-reader accessibility) -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ══════════════ HEADER / NAVBAR ══════════════
+       Changed: <div class="navbar"> → <header><nav> for semantic structure
+  -->
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+
+      <!-- Logo: now a <button> (navigates home) -->
+      <button class="nav-logo" onclick="showPage('home')" aria-label="Biochem Technologies – go to homepage">
+        BIOCHEM TECHNOLOGIES
+      </button>
+
+      <!-- Desktop Links: <ul> list of nav items -->
+      <ul class="nav-links" role="list">
+
+        <li class="nav-item">
+          <button class="nav-link active" id="nav-home" onclick="showPage('home')" aria-current="page">HOME</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="nav-about" onclick="showPage('about')">ABOUT</button>
+        </li>
+
+        <li class="nav-item">
+          <!-- aria-haspopup tells assistive tech this button opens a menu -->
+          <button class="nav-link" id="nav-products" onclick="showPage('products')" aria-haspopup="true" aria-expanded="false">
+            PRODUCTS ▾
+          </button>
+          <!-- Dropdown: now a <ul> with role="menu" -->
+          <ul class="dropdown" role="menu" aria-label="Products submenu">
+            <li role="none"><button class="dropdown-item" role="menuitem" onclick="showPage('pretreatment')">Pre-Treatment</button></li>
+            <li role="none"><button class="dropdown-item" role="menuitem" onclick="showPage('dyeing')">Dyeing Auxiliaries</button></li>
+            <li role="none"><button class="dropdown-item" role="menuitem" onclick="showPage('printing')">Printing</button></li>
+            <li role="none"><button class="dropdown-item" role="menuitem" onclick="showPage('finishing')">Finishing</button></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="nav-why" onclick="showPage('why')">WHY BIOCHEM</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="nav-clients" onclick="showPage('clients')">CLIENTS</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="nav-contact" onclick="showPage('contact')">CONTACT</button>
+        </li>
+
+      </ul><!-- /nav-links -->
+
+      <!-- Hamburger: now a <button> with proper ARIA -->
+      <button
+        class="hamburger"
+        id="hamburger"
+        onclick="toggleMenu()"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+    </nav><!-- /navbar -->
+
+    <!-- Mobile Menu: now a <nav> with aria-label -->
+    <nav
+      class="mobile-menu"
+      id="mobileMenu"
+      aria-label="Mobile navigation"
+      aria-hidden="true"
+    >
+      <button class="mobile-link active" onclick="showPage('home');closeMenu()">HOME</button>
+      <button class="mobile-link" onclick="showPage('about');closeMenu()">ABOUT</button>
+      <button class="mobile-link" onclick="showPage('products');closeMenu()">PRODUCTS</button>
+
+      <!-- Sub-links: <ul> list -->
+      <ul class="mobile-submenu">
+        <li><button class="mobile-sublink" onclick="showPage('pretreatment');closeMenu()">↳ Pre-Treatment</button></li>
+        <li><button class="mobile-sublink" onclick="showPage('dyeing');closeMenu()">↳ Dyeing Auxiliaries</button></li>
+        <li><button class="mobile-sublink" onclick="showPage('printing');closeMenu()">↳ Printing</button></li>
+        <li><button class="mobile-sublink" onclick="showPage('finishing');closeMenu()">↳ Finishing</button></li>
+      </ul>
+
+      <button class="mobile-link" onclick="showPage('why');closeMenu()">WHY BIOCHEM</button>
+      <button class="mobile-link" onclick="showPage('clients');closeMenu()">CLIENTS</button>
+      <button class="mobile-link" onclick="showPage('contact');closeMenu()">CONTACT</button>
+      <button class="mobile-contact-btn" onclick="showPage('contact');closeMenu()">GET A QUOTE</button>
+    </nav><!-- /mobileMenu -->
+
+  </header><!-- /header -->
+
+
+  <!-- ══════════════ MAIN CONTENT
+       Changed: bare page divs wrapped in <main> for landmark semantics
+  ══════════════ -->
+  <main id="main-content">
+
+    <!-- ══════════════ HOME PAGE ══════════════ -->
+    <div id="page-home" class="page active" role="region" aria-label="Home">
+
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div>
+          <p class="hero-tag">Textile Chemicals Manufacturer</p>
+          <h1 id="hero-heading">Power Your Production with Premium Chemical Solutions</h1>
+          <p>From pre-treatment to finishing — Biochem Technologies delivers high-performance textile chemicals with consistent quality, mill-friendly pricing, and solid technical support across India.</p>
+          <div class="hero-btns">
+            <button type="button" class="btn-primary" onclick="showPage('products')">EXPLORE PRODUCTS</button>
+            <button type="button" class="btn-outline" onclick="showPage('contact')">CONTACT SALES</button>
+          </div>
+        </div>
+
+        <!-- Stats: <dl> (description list) is correct semantic for label/value pairs -->
+        <dl class="stats-grid" aria-label="Key company statistics">
+          <div class="stat-cell">
+            <dd class="stat-num">50+</dd>
+            <dt class="stat-lbl">Customers</dt>
+          </div>
+          <div class="stat-cell">
+            <dd class="stat-num">60+</dd>
+            <dt class="stat-lbl">Products</dt>
+          </div>
+          <div class="stat-cell">
+            <dd class="stat-num">2K+</dd>
+            <dt class="stat-lbl">MT Supplied</dt>
+          </div>
+          <div class="stat-cell">
+            <dd class="stat-num">2</dd>
+            <dt class="stat-lbl">Offices</dt>
+          </div>
+        </dl>
+      </section><!-- /hero -->
+
+      <!-- About snippet -->
+      <section class="section" aria-labelledby="about-home-heading">
+        <div class="about-grid">
+          <div>
+            <p class="eyebrow">About Us</p>
+            <h2 class="heading" id="about-home-heading">The Chemical Edge Your Mill Needs</h2>
+            <div class="divider-line" role="presentation"></div>
+            <div class="about-text">
+              <p>Founded in August 2023, Biochem Technologies delivers precisely what fabric processing mills need — the right chemicals, at the right price, backed by solid technical support.</p>
+              <p>We cover the full wet processing chain for both knit and woven segments: pre-treatment, dyeing auxiliaries, dyes, printing auxiliaries, and finishing auxiliaries.</p>
+              <p>No shortcuts on quality. No inflated margins. Just consistent performance that gives your mill a real competitive edge.</p>
+            </div>
+            <br>
+            <button type="button" class="btn-primary" onclick="showPage('about')" style="background:#111;color:#fff;border:none">READ MORE →</button>
+          </div>
+
+          <!-- About points: <ul> list semantics -->
+          <ul class="about-points">
+            <li class="about-point">
+              <span class="point-icon" aria-hidden="true">✓</span>
+              <div>
+                <p class="point-title">Full Wet Processing Coverage</p>
+                <p class="point-text">Pre-treatment through finishing — one partner for every stage.</p>
+              </div>
+            </li>
+            <li class="about-point">
+              <span class="point-icon" aria-hidden="true">⚡</span>
+              <div>
+                <p class="point-title">Technical Support Included</p>
+                <p class="point-text">Expert guidance on every product, every application.</p>
+              </div>
+            </li>
+            <li class="about-point">
+              <span class="point-icon" aria-hidden="true">₹</span>
+              <div>
+                <p class="point-title">Mill-Friendly Pricing</p>
+                <p class="point-text">Competitive pricing that gives your mill a real cost advantage.</p>
+              </div>
+            </li>
+            <li class="about-point">
+              <span class="point-icon" aria-hidden="true">📍</span>
+              <div>
+                <p class="point-title">Two Strategic Locations</p>
+                <p class="point-text">Offices in Kolkata &amp; Ghaziabad serving mills across India.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section><!-- /about snippet -->
+
+      <hr style="border:none;border-top:1px solid #e0e0e0;margin:0 48px">
+
+      <!-- Products overview -->
+      <section class="section" aria-labelledby="products-home-heading">
+        <p class="eyebrow">Our Products</p>
+        <h2 class="heading" id="products-home-heading">Complete Chemical Solutions for Every Stage</h2>
+        <p class="subtext">High-performance chemicals covering the entire textile wet processing chain.</p>
+
+        <!-- Products: <ul> list; each card is a <li> + <button> for keyboard nav -->
+        <ul class="products-grid" style="list-style:none;padding:0">
+          <li>
+            <button type="button" class="prod-card" onclick="showPage('pretreatment')" aria-label="Explore Pre-Treatment chemicals">
+              <span class="prod-icon" aria-hidden="true">💧</span>
+              <h3 class="prod-name">Pre-Treatment</h3>
+              <p class="prod-desc">High-performance scouring, desizing, and bleaching agents for defect-free downstream processing.</p>
+              <span class="prod-link" aria-hidden="true">Explore</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="prod-card" onclick="showPage('dyeing')" aria-label="Explore Dyeing Auxiliaries">
+              <span class="prod-icon" aria-hidden="true">🎨</span>
+              <h3 class="prod-name">Dyeing</h3>
+              <p class="prod-desc">Levelling agents, dispersants, and fixatives for deep, uniform, and reproducible colour every batch.</p>
+              <span class="prod-link" aria-hidden="true">Explore</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="prod-card" onclick="showPage('printing')" aria-label="Explore Printing chemicals">
+              <span class="prod-icon" aria-hidden="true">🖌️</span>
+              <h3 class="prod-name">Printing</h3>
+              <p class="prod-desc">Specialised auxiliaries for sharp definition, vibrant colour yield, and excellent wash fastness.</p>
+              <span class="prod-link" aria-hidden="true">Explore</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="prod-card" onclick="showPage('finishing')" aria-label="Explore Finishing agents">
+              <span class="prod-icon" aria-hidden="true">✨</span>
+              <h3 class="prod-name">Finishing</h3>
+              <p class="prod-desc">Softeners, anti-crease agents, and handle modifiers for the precise feel your buyers demand.</p>
+              <span class="prod-link" aria-hidden="true">Explore</span>
+            </button>
+          </li>
+        </ul>
+      </section><!-- /products overview -->
+
+      <!-- Why Biochem -->
+      <section class="section-dark" aria-labelledby="why-home-heading">
+        <p class="eyebrow-white">Why Biochem</p>
+        <h2 class="heading-white" id="why-home-heading" style="margin-bottom:32px">Built for Mills That Refuse to Compromise</h2>
+        <ul class="why-grid">
+          <li class="why-card"><span class="why-icon" aria-hidden="true">🏆</span><h3 class="why-title">Consistent Quality</h3><p class="why-text">Every batch tested to specification. No variation. No surprises on the production floor.</p></li>
+          <li class="why-card"><span class="why-icon" aria-hidden="true">₹</span><h3 class="why-title">Competitive Pricing</h3><p class="why-text">Direct sourcing and lean margins mean you get premium chemicals without premium cost.</p></li>
+          <li class="why-card"><span class="why-icon" aria-hidden="true">🎧</span><h3 class="why-title">Technical Support</h3><p class="why-text">Our team supports you with application guidance, trials, and troubleshooting on-site.</p></li>
+          <li class="why-card"><span class="why-icon" aria-hidden="true">🚚</span><h3 class="why-title">Reliable Delivery</h3><p class="why-text">Two strategic office locations across India ensure fast, consistent supply to your mill.</p></li>
+          <li class="why-card"><span class="why-icon" aria-hidden="true">🔄</span><h3 class="why-title">Full Range Coverage</h3><p class="why-text">One partner for the entire wet processing chain — pre-treatment to finishing.</p></li>
+          <li class="why-card"><span class="why-icon" aria-hidden="true">🤝</span><h3 class="why-title">Long-Term Partnership</h3><p class="why-text">We treat every client as a long-term partner, not just a transaction.</p></li>
+        </ul>
+      </section><!-- /why biochem -->
+
+      <!-- Clients -->
+      <section class="section-light" aria-labelledby="clients-home-heading">
+        <p class="eyebrow" style="text-align:center">Trusted By</p>
+        <h2 class="heading" id="clients-home-heading" style="text-align:center;margin-bottom:28px">Leading Mills Across India</h2>
+        <ul class="clients-row" aria-label="Client list">
+          <li class="client-pill">PC Colour Soft</li>
+          <li class="client-pill">Tag Developers</li>
+          <li class="client-pill">Ample Textech</li>
+          <li class="client-pill">U-Tech Fabrics</li>
+          <li class="client-pill">Fourstar Int</li>
+          <li class="client-pill">Mahadev Fabrics</li>
+          <li class="client-pill">Jagannath Fabrics</li>
+          <li class="client-pill">Vishnu Cotton Mills</li>
+          <li class="client-pill">Sunbright Fabrics</li>
+          <li class="client-pill">Shivam Processing</li>
+        </ul>
+      </section><!-- /clients -->
+
+      <!-- Testimonials: <figure> + <blockquote> + <figcaption> -->
+      <section class="section" aria-labelledby="testi-home-heading">
+        <p class="eyebrow">Testimonials</p>
+        <h2 class="heading" id="testi-home-heading" style="margin-bottom:28px">What Our Clients Say</h2>
+        <div class="testi-grid">
+
+          <figure class="testi-card">
+            <blockquote class="testi-quote">
+              Biochem's dyeing auxiliaries have given us much more consistent batch results. Their technical team is always available when we need them.
+            </blockquote>
+            <figcaption>
+              <cite class="testi-name">PC COLOUR SOFT</cite>
+              <span class="testi-role">Knit Processing Mill</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testi-card">
+            <blockquote class="testi-quote">
+              We switched to Biochem for our finishing chemicals and noticed an immediate improvement in fabric handle. Pricing is also very competitive.
+            </blockquote>
+            <figcaption>
+              <cite class="testi-name">U-TECH FABRICS</cite>
+              <span class="testi-role">Woven Fabric Mill</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testi-card">
+            <blockquote class="testi-quote">
+              Reliable supply, quality products, and honest pricing. Biochem Technologies has become our go-to chemical partner for all processing needs.
+            </blockquote>
+            <figcaption>
+              <cite class="testi-name">MAHADEV FABRICS</cite>
+              <span class="testi-role">Processing House</span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </section><!-- /testimonials -->
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <div class="cta-text">
+          <h2>Ready to Upgrade Your Mill's Chemical Performance?</h2>
+          <p>Get in touch with our sales team for a free consultation and competitive quote.</p>
+        </div>
+        <div class="cta-btns">
+          <button type="button" class="btn-primary" onclick="showPage('contact')">CONTACT US</button>
+          <button type="button" class="btn-dark"    onclick="showPage('contact')">CALL US NOW</button>
+        </div>
+      </div>
+
+    </div><!-- /page-home -->
+
+
+    <!-- ══════════════ ABOUT PAGE ══════════════ -->
+    <div id="page-about" class="page" role="region" aria-label="About Us">
+
+      <div class="page-header">
+        <!-- Breadcrumb: <nav> + <ol> + <li> (new semantic structure) -->
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#" onclick="showPage('home');return false;">HOME</a></li>
+            <li><span aria-current="page">ABOUT US</span></li>
+          </ol>
+        </nav>
+        <h1 class="heading-white">About Biochem Technologies</h1>
+        <p class="subtext-white">Established 2023 · Kolkata &amp; Ghaziabad · Textile Chemicals Manufacturer</p>
+      </div>
+
+      <section class="section" aria-labelledby="about-story-heading">
+        <div class="about-story">
+          <div class="about-story-text">
+            <p class="eyebrow">Our Story</p>
+            <h2 class="heading" id="about-story-heading">The Chemical Edge Your Mill Needs</h2>
+            <div class="divider-line" role="presentation"></div>
+            <p>Founded in August 2023, Biochem Technologies was built on a single conviction: Indian textile mills deserve better chemical solutions — better quality, better pricing, and better support — without having to choose between them.</p>
+            <p>We cover the full wet processing chain for both knit and woven segments: pre-treatment, dyeing auxiliaries, dyes, printing auxiliaries, and finishing auxiliaries.</p>
+            <p>No shortcuts on quality. No inflated margins. Just consistent performance that gives your mill a real competitive edge in a demanding market.</p>
+            <p>With offices in Kolkata and Ghaziabad, we serve mills across India with fast delivery and hands-on technical support whenever you need it.</p>
+          </div>
+          <div>
+            <p class="eyebrow">Our Values</p>
+            <h2 class="heading">What We Stand For</h2>
+            <div class="divider-line" role="presentation"></div>
+            <ul class="about-values">
+              <li class="value-card"><span class="value-icon" aria-hidden="true">🏆</span><h3 class="value-title">Quality First</h3><p class="value-text">Every batch tested. Zero compromise on specification.</p></li>
+              <li class="value-card"><span class="value-icon" aria-hidden="true">🤝</span><h3 class="value-title">Honest Pricing</h3><p class="value-text">Fair, transparent pricing with no hidden margins.</p></li>
+              <li class="value-card"><span class="value-icon" aria-hidden="true">⚡</span><h3 class="value-title">Technical Excellence</h3><p class="value-text">Deep application knowledge backing every product.</p></li>
+              <li class="value-card"><span class="value-icon" aria-hidden="true">🌱</span><h3 class="value-title">Long-Term Vision</h3><p class="value-text">Partners for growth, not just one-off suppliers.</p></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-dark" aria-labelledby="locations-heading">
+        <p class="eyebrow-white">Our Locations</p>
+        <h2 class="heading-white" id="locations-heading" style="margin-bottom:28px">Two Offices. One Mission.</h2>
+        <div class="location-grid">
+          <address class="location-card" style="font-style:normal">
+            <p class="location-city">Kolkata</p>
+            <p class="location-detail">
+              P-57, Purbalaya, Madhyamgram<br>
+              Kolkata, West Bengal<br><br>
+              <a href="tel:+918777411917" style="color:#888">📞 +91 87774 11917</a><br>
+              <a href="mailto:info@biochemtechnologies.com" style="color:#888">✉ info@biochemtechnologies.com</a>
+            </p>
+          </address>
+          <address class="location-card" style="font-style:normal">
+            <p class="location-city">Ghaziabad</p>
+            <p class="location-detail">
+              A-10, Shalimar Garden Ext-I<br>
+              Ghaziabad, Uttar Pradesh<br><br>
+              <a href="tel:+919586057812" style="color:#888">📞 +91 95860 57812</a><br>
+              <a href="mailto:info@biochemtechnologies.com" style="color:#888">✉ info@biochemtechnologies.com</a>
+            </p>
+          </address>
+        </div>
+      </section>
+
+      <div class="cta-section">
+        <div class="cta-text"><h2>Want to Work With Us?</h2><p>Reach out to our team for a consultation and product trial.</p></div>
+        <div class="cta-btns"><button type="button" class="btn-primary" onclick="showPage('contact')">CONTACT US</button></div>
+      </div>
+
+    </div><!-- /page-about -->
+
+
+    <!-- ══════════════ PRODUCTS PAGE ══════════════ -->
+    <div id="page-products" class="page" role="region" aria-label="Products">
+
+      <div class="page-header">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#" onclick="showPage('home');return false;">HOME</a></li>
+            <li><span aria-current="page">PRODUCTS</span></li>
+          </ol>
+        </nav>
+        <h1 class="heading-white">Our Product Range</h1>
+        <p class="subtext-white">Complete chemical solutions covering the entire textile wet processing chain.</p>
+      </div>
+
+      <section class="section" aria-labelledby="product-range-heading">
+        <h2 class="heading" id="product-range-heading" style="display:none">Product Categories</h2>
+        <ul class="products-grid" style="grid-template-columns:repeat(2,1fr);border:0.5px solid #e0e0e0;list-style:none;padding:0">
+          <li><button type="button" class="prod-card" onclick="showPage('pretreatment')" style="border-bottom:0.5px solid #e0e0e0;border-right:0.5px solid #e0e0e0" aria-label="Explore Pre-Treatment chemicals"><span class="prod-icon" aria-hidden="true">💧</span><h2 class="prod-name">Pre-Treatment</h2><p class="prod-desc">High-performance scouring, desizing, and bleaching agents for defect-free downstream processing.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
+          <li><button type="button" class="prod-card" onclick="showPage('dyeing')" style="border-bottom:0.5px solid #e0e0e0" aria-label="Explore Dyeing Auxiliaries"><span class="prod-icon" aria-hidden="true">🎨</span><h2 class="prod-name">Dyeing Auxiliaries</h2><p class="prod-desc">Levelling agents, dispersants, and fixatives for deep, uniform, and reproducible colour every batch.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
+          <li><button type="button" class="prod-card" onclick="showPage('printing')" style="border-right:0.5px solid #e0e0e0" aria-label="Explore Printing chemicals"><span class="prod-icon" aria-hidden="true">🖌️</span><h2 class="prod-name">Printing Chemicals</h2><p class="prod-desc">Specialised auxiliaries for sharp definition, vibrant colour yield, and excellent wash fastness.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
+          <li><button type="button" class="prod-card" onclick="showPage('finishing')" aria-label="Explore Finishing agents"><span class="prod-icon" aria-hidden="true">✨</span><h2 class="prod-name">Finishing Agents</h2><p class="prod-desc">Softeners, anti-crease agents, and handle modifiers for the precise feel your buyers demand.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
+        </ul>
+      </section>
+
+      <div class="cta-section">
+        <div class="cta-text"><h2>Need a Product Datasheet or Sample?</h2><p>Contact our technical team for detailed specifications and trial quantities.</p></div>
+        <div class="cta-btns"><button type="button" class="btn-primary" onclick="showPage('contact')">ENQUIRE NOW</button></div>
+      </div>
+
+    </div><!-- /page-products -->
+
+
+    <!-- ══════════════ DYEING PAGE ══════════════ -->
+    <div id="page-dyeing" class="page" role="region" aria-label="Dyeing Auxiliaries">
+
+      <div class="product-hero">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#" onclick="showPage('home');return false;">HOME</a></li>
+            <li><a href="#" onclick="showPage('products');return false;">PRODUCTS</a></li>
+            <li><span aria-current="page">DYEING AUXILIARIES</span></li>
+          </ol>
+        </nav>
+        <h1 class="heading-white">Dyeing Auxiliaries</h1>
+        <p class="subtext-white">Precision-engineered chemicals for deep, uniform, and reproducible colour across every batch.</p>
+      </div>
+
+      <!-- Product groups -->
+      <article class="product-group" aria-label="Zetacid – pH control">
+        <div class="group-header"><div><h2 class="group-name">ZETACID</h2><p class="group-sub">pH control &amp; acid buffer agent</p></div><span class="group-badge">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetacid Can</span><span class="variant-tag">Acid Buffer</span></li>
+          <li class="variant-item"><span class="variant-name">Zetacid</span><span class="variant-tag">pH Control</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetadfoam – Antifoam">
+        <div class="group-header alt"><div><h2 class="group-name dark">ZETADFOAM</h2><p class="group-sub">Antifoam agent for dye baths</p></div><span class="group-badge dark">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item alt"><span class="variant-name">Zetadfoam</span><span class="variant-tag">Antifoam</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetadfoam TC</span><span class="variant-tag">Antifoam</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetafix – Colour Fixative">
+        <div class="group-header"><div><h2 class="group-name">ZETAFIX</h2><p class="group-sub">Reactive dye colour fixative</p></div><span class="group-badge">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetafix FF</span><span class="variant-tag">Colour Fixative</span></li>
+          <li class="variant-item"><span class="variant-name">Zetafix FF New</span><span class="variant-tag">Colour Fixative</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetalev – Levelling">
+        <div class="group-header alt"><div><h2 class="group-name dark">ZETALEV</h2><p class="group-sub">Levelling &amp; migration agent</p></div><span class="group-badge dark">6 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item alt"><span class="variant-name">Zetalev AB55</span><span class="variant-tag">Levelling</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetalev CDL</span><span class="variant-tag">Levelling</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetalev CLD</span><span class="variant-tag">Levelling</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetalev LDR</span><span class="variant-tag">Levelling</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetalev ENN</span><span class="variant-tag">Levelling</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetalev XCL</span><span class="variant-tag">Levelling</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetalub – Lubricant">
+        <div class="group-header"><div><h2 class="group-name">ZETALUB</h2><p class="group-sub">Lubricating agent for smooth processing</p></div><span class="group-badge">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetalub EAC</span><span class="variant-tag">Lubricant</span></li>
+          <li class="variant-item"><span class="variant-name">Zetalub Neuvo</span><span class="variant-tag">Lubricant</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetawash – Soaping">
+        <div class="group-header"><div><h2 class="group-name">ZETAWASH</h2><p class="group-sub">Soaping agent for wash</p></div><span class="group-badge">7 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetawash ES</span><span class="variant-tag">Soaping</span></li>
+          <li class="variant-item"><span class="variant-name">Zetawash HPS</span><span class="variant-tag">Soaping</span></li>
+          <li class="variant-item"><span class="variant-name">Zetawash HPS CONC</span><span class="variant-tag">Soaping</span></li>
+          <li class="variant-item"><span class="variant-name">Zetawash HPS CONC-I</span><span class="variant-tag">Soaping</span></li>
+          <li class="variant-item"><span class="variant-name">Zetawash HPS NEW</span><span class="variant-tag">Soaping</span></li>
+          <li class="variant-item"><span class="variant-name">Zetawash LTS</span><span class="variant-tag">Soaping</span></li>
+          <li class="variant-item"><span class="variant-name">Zetawash Conc</span><span class="variant-tag">Levelling</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Tru – Alkali Agent">
+        <div class="group-header alt"><div><h2 class="group-name dark">TRU</h2><p class="group-sub">Alkali donor for reactive dyeing</p></div><span class="group-badge dark">1 VARIANT</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item alt"><span class="variant-name">Tru Alkali</span><span class="variant-tag">Alkali Agent</span></li>
+          <li class="variant-item alt" style="background:#f5f5f5" aria-hidden="true"></li>
+        </ul>
+      </article>
+
+      <div class="cta-section">
+        <div class="cta-text"><h2>Need a Datasheet or Sample?</h2><p>Our technical team is ready to assist with product selection and trials.</p></div>
+        <div class="cta-btns">
+          <button type="button" class="btn-primary" onclick="showPage('contact')">ENQUIRE NOW</button>
+          <button type="button" class="btn-dark"    onclick="showPage('products')">← BACK TO PRODUCTS</button>
+        </div>
+      </div>
+
+    </div><!-- /page-dyeing -->
+
+
+    <!-- ══════════════ PRE-TREATMENT PAGE ══════════════ -->
+    <div id="page-pretreatment" class="page" role="region" aria-label="Pre-Treatment Chemicals">
+
+      <div class="product-hero">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#" onclick="showPage('home');return false;">HOME</a></li>
+            <li><a href="#" onclick="showPage('products');return false;">PRODUCTS</a></li>
+            <li><span aria-current="page">PRE-TREATMENT</span></li>
+          </ol>
+        </nav>
+        <h1 class="heading-white">Pre-Treatment Chemicals</h1>
+        <p class="subtext-white">High-performance scouring, desizing, and bleaching agents for defect-free downstream processing.</p>
+      </div>
+
+      <article class="product-group" aria-label="Zetasc – Scouring">
+        <div class="group-header"><div><h2 class="group-name">ZETASC</h2><p class="group-sub">Scouring agent for knit &amp; woven</p></div><span class="group-badge">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetasc NI</span><span class="variant-tag">Scouring</span></li>
+          <li class="variant-item"><span class="variant-name">Zetasc EH</span><span class="variant-tag">Scouring</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetawet – Wetting">
+        <div class="group-header alt"><div><h2 class="group-name dark">ZETAWET</h2><p class="group-sub">Wetting &amp; penetrating agent</p></div><span class="group-badge dark">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item alt"><span class="variant-name">Zetawet LF</span><span class="variant-tag">Wetting Agent</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetawet DP</span><span class="variant-tag">Penetrant</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetadet – Detergent">
+        <div class="group-header"><div><h2 class="group-name">ZETADET</h2><p class="group-sub">Detergent for pre-treatment baths</p></div><span class="group-badge">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetadet AN</span><span class="variant-tag">Detergent</span></li>
+          <li class="variant-item"><span class="variant-name">Zetadet CT</span><span class="variant-tag">Detergent</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetaperox – Stabiliser">
+        <div class="group-header alt"><div><h2 class="group-name dark">ZETAPEROX</h2><p class="group-sub">Hydrogen peroxide stabiliser</p></div><span class="group-badge dark">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item alt"><span class="variant-name">Zetaperox ST</span><span class="variant-tag">Stabiliser</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetaperox MG</span><span class="variant-tag">Stabiliser</span></li>
+        </ul>
+      </article>
+
+      <div class="cta-section">
+        <div class="cta-text"><h2>Need a Datasheet or Sample?</h2><p>Our technical team is ready to assist with product selection and trials.</p></div>
+        <div class="cta-btns">
+          <button type="button" class="btn-primary" onclick="showPage('contact')">ENQUIRE NOW</button>
+          <button type="button" class="btn-dark"    onclick="showPage('products')">← BACK TO PRODUCTS</button>
+        </div>
+      </div>
+
+    </div><!-- /page-pretreatment -->
+
+
+    <!-- ══════════════ PRINTING PAGE ══════════════ -->
+    <div id="page-printing" class="page" role="region" aria-label="Printing Chemicals">
+
+      <div class="product-hero">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#" onclick="showPage('home');return false;">HOME</a></li>
+            <li><a href="#" onclick="showPage('products');return false;">PRODUCTS</a></li>
+            <li><span aria-current="page">PRINTING CHEMICALS</span></li>
+          </ol>
+        </nav>
+        <h1 class="heading-white">Printing Chemicals</h1>
+        <p class="subtext-white">Specialised auxiliaries for sharp definition, vibrant colour yield, and excellent wash fastness.</p>
+      </div>
+
+      <article class="product-group" aria-label="Zetaprint – Thickener">
+        <div class="group-header"><div><h2 class="group-name">ZETAPRINT</h2><p class="group-sub">Printing paste thickener</p></div><span class="group-badge">3 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetaprint ST</span><span class="variant-tag">Thickener</span></li>
+          <li class="variant-item"><span class="variant-name">Zetaprint SYN</span><span class="variant-tag">Synthetic Thickener</span></li>
+          <li class="variant-item"><span class="variant-name">Zetaprint NTR</span><span class="variant-tag">Natural Thickener</span></li>
+          <li class="variant-item" style="background:#f5f5f5" aria-hidden="true"></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetabind – Binder">
+        <div class="group-header alt"><div><h2 class="group-name dark">ZETABIND</h2><p class="group-sub">Pigment binder for printing</p></div><span class="group-badge dark">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item alt"><span class="variant-name">Zetabind SF</span><span class="variant-tag">Soft Binder</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetabind XL</span><span class="variant-tag">Cross-link Binder</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetafix P – Fixative">
+        <div class="group-header"><div><h2 class="group-name">ZETAFIX P</h2><p class="group-sub">Print fixative agent</p></div><span class="group-badge">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetafix P-100</span><span class="variant-tag">Fixative</span></li>
+          <li class="variant-item"><span class="variant-name">Zetafix P-200</span><span class="variant-tag">Fixative</span></li>
+        </ul>
+      </article>
+
+      <div class="cta-section">
+        <div class="cta-text"><h2>Need a Datasheet or Sample?</h2><p>Our technical team is ready to assist with product selection and trials.</p></div>
+        <div class="cta-btns">
+          <button type="button" class="btn-primary" onclick="showPage('contact')">ENQUIRE NOW</button>
+          <button type="button" class="btn-dark"    onclick="showPage('products')">← BACK TO PRODUCTS</button>
+        </div>
+      </div>
+
+    </div><!-- /page-printing -->
+
+
+    <!-- ══════════════ FINISHING PAGE ══════════════ -->
+    <div id="page-finishing" class="page" role="region" aria-label="Finishing Agents">
+
+      <div class="product-hero">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#" onclick="showPage('home');return false;">HOME</a></li>
+            <li><a href="#" onclick="showPage('products');return false;">PRODUCTS</a></li>
+            <li><span aria-current="page">FINISHING AGENTS</span></li>
+          </ol>
+        </nav>
+        <h1 class="heading-white">Finishing Agents</h1>
+        <p class="subtext-white">Softeners, anti-crease agents, and handle modifiers for the precise feel your buyers demand.</p>
+      </div>
+
+      <article class="product-group" aria-label="Zetasoft – Softener">
+        <div class="group-header"><div><h2 class="group-name">ZETASOFT</h2><p class="group-sub">Fabric softener range</p></div><span class="group-badge">4 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetasoft SIL</span><span class="variant-tag">Silicone Softener</span></li>
+          <li class="variant-item"><span class="variant-name">Zetasoft MS</span><span class="variant-tag">Micro Silicone</span></li>
+          <li class="variant-item"><span class="variant-name">Zetasoft CT</span><span class="variant-tag">Cationic Softener</span></li>
+          <li class="variant-item"><span class="variant-name">Zetasoft AM</span><span class="variant-tag">Amino Softener</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetacrease – Anti-Crease">
+        <div class="group-header alt"><div><h2 class="group-name dark">ZETACREASE</h2><p class="group-sub">Anti-crease &amp; wrinkle resist agent</p></div><span class="group-badge dark">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item alt"><span class="variant-name">Zetacrease AC</span><span class="variant-tag">Anti-Crease</span></li>
+          <li class="variant-item alt"><span class="variant-name">Zetacrease WR</span><span class="variant-tag">Wrinkle Resist</span></li>
+        </ul>
+      </article>
+
+      <article class="product-group" aria-label="Zetahandle – Handle Modifier">
+        <div class="group-header"><div><h2 class="group-name">ZETAHANDLE</h2><p class="group-sub">Handle modifier for knit &amp; woven</p></div><span class="group-badge">2 VARIANTS</span></div>
+        <ul class="variants-grid">
+          <li class="variant-item"><span class="variant-name">Zetahandle SFT</span><span class="variant-tag">Soft Handle</span></li>
+          <li class="variant-item"><span class="variant-name">Zetahandle FIRM</span><span class="variant-tag">Firm Handle</span></li>
+        </ul>
+      </article>
+
+      <div class="cta-section">
+        <div class="cta-text"><h2>Need a Datasheet or Sample?</h2><p>Our technical team is ready to assist with product selection and trials.</p></div>
+        <div class="cta-btns">
+          <button type="button" class="btn-primary" onclick="showPage('contact')">ENQUIRE NOW</button>
+          <button type="button" class="btn-dark"    onclick="showPage('products')">← BACK TO PRODUCTS</button>
+        </div>
+      </div>
+
+    </div><!-- /page-finishing -->
+
+
+    <!-- ══════════════ WHY BIOCHEM PAGE ══════════════ -->
+    <div id="page-why" class="page" role="region" aria-label="Why Biochem">
+
+      <div class="why-hero">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#" onclick="showPage('home');return false;">HOME</a></li>
+            <li><span aria-current="page">WHY BIOCHEM</span></li>
+          </ol>
+        </nav>
+        <h1 class="heading-white">Built for Mills That Refuse to Compromise</h1>
+        <p class="subtext-white">Six reasons why India's leading textile mills choose Biochem Technologies as their chemical partner.</p>
+      </div>
+
+      <section class="section" aria-labelledby="why-reasons-heading">
+        <h2 id="why-reasons-heading" style="display:none">Our Six Advantages</h2>
+        <ul class="why-full-grid">
+          <li class="why-full-card"><span class="why-full-icon" aria-hidden="true">🏆</span><h3 class="why-full-title">Consistent Quality</h3><p class="why-full-text">Every batch is tested to specification before it leaves our warehouse. We maintain strict quality controls so there are zero surprises on your production floor.</p></li>
+          <li class="why-full-card"><span class="why-full-icon" aria-hidden="true">₹</span><h3 class="why-full-title">Competitive Pricing</h3><p class="why-full-text">Through direct sourcing relationships and lean operating margins, we pass real savings to our mill partners. Premium chemical performance at pricing that makes sense.</p></li>
+          <li class="why-full-card"><span class="why-full-icon" aria-hidden="true">🎧</span><h3 class="why-full-title">Technical Support</h3><p class="why-full-text">Our technical team brings deep application knowledge to every client relationship. We support you with product selection, trials, and real-time troubleshooting on-site.</p></li>
+          <li class="why-full-card"><span class="why-full-icon" aria-hidden="true">🚚</span><h3 class="why-full-title">Reliable Delivery</h3><p class="why-full-text">With two strategically located offices in Kolkata and Ghaziabad, we maintain consistent supply to mills across India. Your chemicals arrive when you need them.</p></li>
+          <li class="why-full-card"><span class="why-full-icon" aria-hidden="true">🔄</span><h3 class="why-full-title">Full Range Coverage</h3><p class="why-full-text">We are your single source partner for the entire wet processing chain — pre-treatment, dyeing, printing, and finishing. One supplier, one relationship.</p></li>
+          <li class="why-full-card"><span class="why-full-icon" aria-hidden="true">🤝</span><h3 class="why-full-title">Long-Term Partnership</h3><p class="why-full-text">We build relationships, not transactions. Our business grows when yours does — always looking to improve your process efficiency and reduce costs.</p></li>
+        </ul>
+      </section>
+
+      <div class="cta-section">
+        <div class="cta-text"><h2>Ready to Experience the Biochem Difference?</h2><p>Get in touch for a free product consultation and sample trial.</p></div>
+        <div class="cta-btns"><button type="button" class="btn-primary" onclick="showPage('contact')">GET STARTED</button></div>
+      </div>
+
+    </div><!-- /page-why -->
+
+
+    <!-- ══════════════ CLIENTS PAGE ══════════════ -->
+    <div id="page-clients" class="page" role="region" aria-label="Clients">
+
+      <div class="page-header">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#" onclick="showPage('home');return false;">HOME</a></li>
+            <li><span aria-current="page">CLIENTS</span></li>
+          </ol>
+        </nav>
+        <h1 class="heading-white">Our Clients</h1>
+        <p class="subtext-white">Trusted by 50+ leading mills and processing houses across India.</p>
+      </div>
+
+      <section class="section" aria-labelledby="clients-list-heading">
+        <p class="eyebrow">Our Partners</p>
+        <h2 class="heading" id="clients-list-heading" style="margin-bottom:28px">Mills That Trust Biochem</h2>
+        <ul class="clients-full-grid" aria-label="Client directory">
+          <li class="client-card"><p class="client-name">PC Colour Soft</p><p class="client-type">Knit Processing Mill</p></li>
+          <li class="client-card"><p class="client-name">Tag Developers</p><p class="client-type">Fabric Processing</p></li>
+          <li class="client-card"><p class="client-name">Ample Textech</p><p class="client-type">Textile Processing</p></li>
+          <li class="client-card"><p class="client-name">U-Tech Fabrics</p><p class="client-type">Woven Fabric Mill</p></li>
+          <li class="client-card"><p class="client-name">Fourstar Int</p><p class="client-type">Export Processing House</p></li>
+          <li class="client-card"><p class="client-name">Mahadev Fabrics</p><p class="client-type">Processing House</p></li>
+          <li class="client-card"><p class="client-name">Jagannath Fabrics</p><p class="client-type">Woven Processing</p></li>
+          <li class="client-card"><p class="client-name">Vishnu Cotton Mills</p><p class="client-type">Cotton Processing Mill</p></li>
+          <li class="client-card"><p class="client-name">Sunbright Fabrics</p><p class="client-type">Knit &amp; Woven Mill</p></li>
+          <li class="client-card"><p class="client-name">Shivam Processing</p><p class="client-type">Processing House</p></li>
+        </ul>
+      </section>
+
+      <section class="section" style="padding-top:0" aria-labelledby="testi-clients-heading">
+        <p class="eyebrow">Testimonials</p>
+        <h2 class="heading" id="testi-clients-heading" style="margin-bottom:28px">What They Say</h2>
+        <div class="testi-grid">
+          <figure class="testi-card">
+            <blockquote class="testi-quote">Biochem's dyeing auxiliaries have given us much more consistent batch results. Their technical team is always available when we need them.</blockquote>
+            <figcaption><cite class="testi-name">PC COLOUR SOFT</cite><span class="testi-role">Knit Processing Mill</span></figcaption>
+          </figure>
+          <figure class="testi-card">
+            <blockquote class="testi-quote">We switched to Biochem for our finishing chemicals and noticed an immediate improvement in fabric handle. Pricing is also very competitive.</blockquote>
+            <figcaption><cite class="testi-name">U-TECH FABRICS</cite><span class="testi-role">Woven Fabric Mill</span></figcaption>
+          </figure>
+          <figure class="testi-card">
+            <blockquote class="testi-quote">Reliable supply, quality products, and honest pricing. Biochem Technologies has become our go-to chemical partner for all processing needs.</blockquote>
+            <figcaption><cite class="testi-name">MAHADEV FABRICS</cite><span class="testi-role">Processing House</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="cta-section">
+        <div class="cta-text"><h2>Join Our Growing Client Family</h2><p>Get in touch to become a Biochem Technologies partner.</p></div>
+        <div class="cta-btns"><button type="button" class="btn-primary" onclick="showPage('contact')">CONTACT US</button></div>
+      </div>
+
+    </div><!-- /page-clients -->
+
+
+    <!-- ══════════════ CONTACT PAGE ══════════════ -->
+    <div id="page-contact" class="page" role="region" aria-label="Contact">
+
+      <div class="page-header">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#" onclick="showPage('home');return false;">HOME</a></li>
+            <li><span aria-current="page">CONTACT</span></li>
+          </ol>
+        </nav>
+        <h1 class="heading-white">Get In Touch</h1>
+        <p class="subtext-white">Reach out for product enquiries, datasheets, pricing, or technical support.</p>
+      </div>
+
+      <section class="section" aria-labelledby="contact-heading">
+        <div class="contact-grid">
+          <div>
+            <p class="eyebrow">Send Us a Message</p>
+            <h2 class="heading" id="contact-heading" style="margin-bottom:24px">We'll Respond Within 24 Hours</h2>
+
+            <!-- Contact form: added id, name, novalidate; labels now use for/id pairs -->
+            <form
+              id="contactForm"
+              class="contact-form"
+              novalidate
+              onsubmit="handleFormSubmit(event)"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="firstName">First Name</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Your first name"
+                    autocomplete="given-name"
+                    required
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="lastName">Last Name</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Your last name"
+                    autocomplete="family-name"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="company">Company / Mill Name</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Your company name"
+                  autocomplete="organization"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number</label>
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+91 00000 00000"
+                  autocomplete="tel"
+                >
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Message</label>
+                <textarea
+                  class="form-textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your requirements — product name, quantity, application..."
+                  required
+                ></textarea>
+              </div>
+
+              <!-- type="submit" (was missing) -->
+              <button type="submit" class="btn-primary" style="background:#111;color:#fff;width:100%;padding:14px;font-size:12px">
+                SEND MESSAGE
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact info -->
+          <div class="contact-info">
+            <p class="eyebrow">Contact Details</p>
+            <h2 class="heading" style="margin-bottom:24px">Reach Us Directly</h2>
+
+            <address class="contact-card" style="font-style:normal">
+              <p class="contact-card-title">📍 Kolkata Office</p>
+              <p class="contact-card-detail">
+                P-57, Purbalaya, Madhyamgram<br>
+                Kolkata, West Bengal<br><br>
+                <a href="tel:+918777411917" style="color:#888">📞 +91 87774 11917</a>
+              </p>
+            </address>
+
+            <address class="contact-card" style="font-style:normal">
+              <p class="contact-card-title">📍 Ghaziabad Office</p>
+              <p class="contact-card-detail">
+                A-10, Shalimar Garden Ext-I<br>
+                Ghaziabad, Uttar Pradesh<br><br>
+                <a href="tel:+919586057812" style="color:#888">📞 +91 95860 57812</a>
+              </p>
+            </address>
+
+            <div class="contact-card">
+              <p class="contact-card-title">✉ Email Us</p>
+              <p class="contact-card-detail">
+                <a href="mailto:info@biochemtechnologies.com" style="color:#888">info@biochemtechnologies.com</a><br><br>
+                For product enquiries, datasheets, samples, and technical support.
+              </p>
+            </div>
+
+            <div class="contact-card">
+              <p class="contact-card-title">💬 WhatsApp</p>
+              <p class="contact-card-detail">Prefer to chat? Message us directly on WhatsApp for quick responses.</p>
+              <!-- Changed from <button> to <a> with tel/WhatsApp deep-link (new) -->
+              
+                href="https://wa.me/918777411917"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="whatsapp-btn"
+                aria-label="Chat with Biochem Technologies on WhatsApp"
+              >
+                💬 CHAT ON WHATSAPP
+              </a>
+            </div>
+
+          </div><!-- /contact-info -->
+        </div>
+      </section>
+
+    </div><!-- /page-contact -->
+
+  </main><!-- /main -->
+
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer" aria-label="Site footer">
+
+    <div>
+      <p class="footer-logo">BIOCHEM TECHNOLOGIES</p>
+      <p class="footer-tagline">Textile Chemicals Manufacturer · Est. 2023</p>
+    </div>
+
+    <!-- Offices: use <address> for contact info -->
+    <div class="footer-offices">
+      <address style="font-style:normal">
+        <p class="office-city">Kolkata</p>
+        <p class="office-detail">
+          P-57, Purbalaya, Madhyamgram<br>
+          <a href="tel:+918777411917" style="color:#666">+91 87774 11917</a>
+        </p>
+      </address>
+      <address style="font-style:normal">
+        <p class="office-city">Ghaziabad</p>
+        <p class="office-detail">
+          A-10, Shalimar Garden Ext-I<br>
+          <a href="tel:+919586057812" style="color:#666">+91 95860 57812</a>
+        </p>
+      </address>
+    </div>
+
+    <!-- Quick links: <nav> + <ul> (new) -->
+    <nav aria-label="Footer navigation">
+      <p class="office-city" style="margin-bottom:10px">Quick Links</p>
+      <ul class="footer-links">
+        <li><button type="button" class="footer-link-btn" onclick="showPage('home')">Home</button></li>
+        <li><button type="button" class="footer-link-btn" onclick="showPage('products')">Products</button></li>
+        <li><button type="button" class="footer-link-btn" onclick="showPage('about')">About Us</button></li>
+        <li><button type="button" class="footer-link-btn" onclick="showPage('contact')">Contact</button></li>
+      </ul>
+    </nav>
+
+    <p class="footer-copy">
+      © 2026 Biochem Technologies. All Rights Reserved. ·
+      <button type="button" class="footer-link-btn" style="color:#444;display:inline;font-size:11px">Privacy Policy</button> ·
+      <button type="button" class="footer-link-btn" style="color:#444;display:inline;font-size:11px">Terms</button>
+    </p>
+
+  </footer>
+
+
+  <script>
+    /* ── PAGE NAVIGATION ── */
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+      // Clear active state & aria-current on all nav buttons
+      document.querySelectorAll('.nav-link').forEach(l => {
+        l.classList.remove('active');
+        l.removeAttribute('aria-current');
+      });
+      document.querySelectorAll('.mobile-link').forEach(l => l.classList.remove('active'));
+
+      const page = document.getElementById('page-' + pageId);
+      if (page) page.classList.add('active');
+
+      const navMap = {
+        home: 'nav-home', about: 'nav-about',
+        products: 'nav-products', pretreatment: 'nav-products',
+        dyeing: 'nav-products', printing: 'nav-products',
+        finishing: 'nav-products', why: 'nav-why',
+        clients: 'nav-clients', contact: 'nav-contact'
+      };
+
+      const navEl = document.getElementById(navMap[pageId]);
+      if (navEl) {
+        navEl.classList.add('active');
+        navEl.setAttribute('aria-current', 'page');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ── MOBILE MENU ── */
+    function toggleMenu() {
+      const menu   = document.getElementById('mobileMenu');
+      const burger = document.getElementById('hamburger');
+      const isOpen = menu.classList.toggle('open');
+      burger.classList.toggle('open', isOpen);
+
+      // Keep aria-expanded in sync
+      burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menu.setAttribute('aria-hidden',     isOpen ? 'false' : 'true');
+    }
+
+    function closeMenu() {
+      const menu   = document.getElementById('mobileMenu');
+      const burger = document.getElementById('hamburger');
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+    }
+
+    /* ── CONTACT FORM SUBMIT ── */
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      if (!form.checkValidity()) {
+        // Let native browser validation show messages
+        form.reportValidity();
+        return;
+      }
+      // TODO: wire up to your backend / email service
+      alert('Thank you! We will get back to you within 24 hours.');
+      form.reset();
+    }
+
+    /* ── CLOSE MOBILE MENU ON OUTSIDE CLICK ── */
+    document.addEventListener('click', function(e) {
+      const menu   = document.getElementById('mobileMenu');
+      const burger = document.getElementById('hamburger');
+      if (menu.classList.contains('open') &&
+          !menu.contains(e.target) &&
+          !burger.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    /* ── CLOSE MOBILE MENU ON ESC ── */
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  </script>
+
+</body>
+</html>
