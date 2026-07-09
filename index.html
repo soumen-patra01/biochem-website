@@ -168,11 +168,13 @@
 
     /* ── CLIENTS ── */
     .clients-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;list-style:none}
-    .client-pill{background:#fff;border:0.5px solid #ddd;padding:8px 18px;font-size:11px;color:#444;letter-spacing:0.5px}
+    .client-pill{background:#fff;border:0.5px solid #ddd;padding:8px 18px;font-size:11px;color:#444;letter-spacing:0.5px;border-radius:50px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    .client-pill:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.08);border-color:#111}
 
     /* ── TESTIMONIALS – now uses <figure>/<blockquote> ── */
     .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .testi-card{border:0.5px solid #e0e0e0;padding:28px 24px;margin:0}
+    .testi-card{border:0.5px solid #e0e0e0;padding:28px 24px;margin:0;border-radius:16px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    .testi-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.10);border-color:#111}
     .testi-quote{font-size:13px;color:#444;line-height:1.9;font-style:italic;margin-bottom:18px;border-left:3px solid #111;padding-left:16px}
     .testi-name{font-size:12px;font-weight:600;color:#111;letter-spacing:0.5px;display:block;font-style:normal}
     .testi-role{font-size:11px;color:#888;margin-top:4px;display:block}
@@ -294,7 +296,7 @@
 
     /* ── CLIENTS PAGE ── */
     .clients-full-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;list-style:none}
-    .client-card{border:0.5px solid #e0e0e0;padding:24px;text-align:center;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
+    .client-card{border:0.5px solid #e0e0e0;padding:24px;text-align:center;border-radius:16px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
     .client-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,0.09);border-color:#111}
     .client-name{font-size:13px;font-weight:600;color:#111;margin-bottom:6px;letter-spacing:0.5px}
     .client-type{font-size:11px;color:#888}
