@@ -148,18 +148,20 @@
 
     /* ── PRODUCTS GRID ── */
     .products-grid{display:grid;grid-template-columns:repeat(4,1fr);border:0.5px solid #e0e0e0}
-    .prod-card{padding:32px 28px;display:flex;flex-direction:column;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);background:#fff;border:1px solid #e8e8e8;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,0.04);font-family:'Montserrat',sans-serif;text-align:left;width:100%;opacity:0;transform:translateY(24px);animation:prodCardIn .6s ease forwards}
+    .prod-card{padding:32px 28px;display:flex;flex-direction:column;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);background:#fff;border:1px solid #e8e8e8;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.04);font-family:'Montserrat',sans-serif;text-align:left;width:100%;opacity:0;transform:translateY(24px) perspective(800px) rotateX(0deg);animation:prodCardIn .6s ease forwards;position:relative;overflow:hidden}
+    .prod-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border-radius:18px;background:linear-gradient(135deg,rgba(0,87,255,0.06) 0%,transparent 50%);opacity:0;transition:opacity .4s;z-index:0;pointer-events:none}
+    .prod-card:hover::before{opacity:1}
     .prod-card:nth-child(1){animation-delay:.1s}
-    .prod-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(0,87,255,0.12);border-color:#b8d4ff;background:#fafcff}
-    .prod-card:active{transform:translateY(-3px)}
+    .prod-card:hover{transform:translateY(-5px) perspective(800px) rotateX(2deg);box-shadow:0 16px 40px rgba(0,87,255,0.10),0 4px 12px rgba(0,0,0,0.06);border-color:#c4d9f5}
+    .prod-card:active{transform:translateY(-2px) perspective(800px) rotateX(1deg)}
     .prod-card:focus-visible{outline:2px solid #0057B8;outline-offset:2px}
-    @keyframes prodCardIn{to{opacity:1;transform:translateY(0)}}
-    .prod-icon{font-size:32px;color:#111;margin-bottom:18px;transition:transform .3s}
-    .prod-card:hover .prod-icon{transform:scale(1.15)}
-    .prod-name{font-size:14px;font-weight:700;color:#111;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase;transition:color .3s}
+    @keyframes prodCardIn{to{opacity:1;transform:translateY(0) perspective(800px) rotateX(0deg)}}
+    .prod-icon{font-size:32px;color:#111;margin-bottom:18px;transition:transform .3s;position:relative;z-index:1}
+    .prod-card:hover .prod-icon{transform:scale(1.05)}
+    .prod-name{font-size:14px;font-weight:700;color:#111;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase;transition:color .3s;position:relative;z-index:1}
     .prod-card:hover .prod-name{color:#0057B8}
-    .prod-desc{font-size:12px;color:#888;line-height:1.8;margin-bottom:20px;flex:1}
-    .prod-link{font-size:11px;color:#fff;background:#111;letter-spacing:1.5px;padding:8px 18px;border-radius:6px;display:inline-block;text-transform:uppercase;transition:all .3s;border:none;align-self:flex-start}
+    .prod-desc{font-size:12px;color:#888;line-height:1.8;margin-bottom:20px;flex:1;position:relative;z-index:1}
+    .prod-link{font-size:11px;color:#fff;background:#111;letter-spacing:1.5px;padding:8px 18px;border-radius:6px;display:inline-block;text-transform:uppercase;transition:all .3s;border:none;align-self:flex-start;position:relative;z-index:1}
     .prod-card:hover .prod-link{background:#0057B8;box-shadow:0 4px 12px rgba(0,87,184,0.3)}
 
     /* ── WHY BIOCHEM ── */
