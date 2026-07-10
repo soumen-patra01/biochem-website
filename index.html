@@ -304,6 +304,44 @@
     /* ── PAGE HEADER ── */
     .page-header{background:#111;padding:48px;border-bottom:3px solid #fff}
 
+    /* ══ PRODUCT DETAIL PAGES ══ */
+    .pd-page{background:#f4f4f4}
+    .pd-hero{background:#111;padding:48px;border-bottom:3px solid #fff;position:relative}
+    .pd-back{background:none;border:1px solid rgba(255,255,255,0.25);color:#aaa;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:7px 14px;border-radius:5px;cursor:pointer;font-family:'Montserrat',sans-serif;margin-bottom:20px;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
+    .pd-back:hover{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.5)}
+    .pd-cat-badge{display:inline-block;background:rgba(255,255,255,0.12);color:#bbb;font-size:10px;font-weight:700;letter-spacing:2px;padding:4px 12px;border-radius:4px;margin-bottom:14px}
+    .pd-title{font-size:38px;font-weight:800;color:#fff;margin:0 0 6px;letter-spacing:-0.5px}
+    .pd-tagline{color:#888;font-size:14px;margin:0}
+    .pd-body{max-width:980px;margin:0 auto;padding:48px 48px 64px}
+    .pd-section{background:#fff;border-radius:10px;padding:32px;margin-bottom:24px;border:1px solid #e8e8e8}
+    .pd-section-title{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#111;margin:0 0 20px;padding-bottom:12px;border-bottom:2px solid #111;display:flex;align-items:center;gap:8px}
+    .pd-desc{font-size:14px;line-height:1.9;color:#444;margin:0}
+    .pd-benefits{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .pd-benefit{background:#f8f8f8;border-left:3px solid #111;padding:14px 16px;border-radius:0 8px 8px 0}
+    .pd-benefit-title{font-size:12px;font-weight:700;color:#111;margin-bottom:4px}
+    .pd-benefit-desc{font-size:12px;color:#666;line-height:1.6;margin:0}
+    .pd-props-table{width:100%;border-collapse:collapse}
+    .pd-props-table tr{border-bottom:1px solid #eee}
+    .pd-props-table tr:last-child{border-bottom:none}
+    .pd-props-table td{padding:12px 16px;font-size:13px;vertical-align:top}
+    .pd-props-table td:first-child{font-weight:700;color:#111;width:260px;background:#f8f8f8;font-size:12px;letter-spacing:0.3px}
+    .pd-props-table td:last-child{color:#444}
+    .pd-app-label{font-size:12px;font-weight:700;color:#555;letter-spacing:0.5px;margin:0 0 8px;text-transform:uppercase}
+    .pd-app-table{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:12px}
+    .pd-app-table th{background:#111;color:#fff;padding:10px 14px;text-align:left;font-weight:700;letter-spacing:0.5px;font-size:11px}
+    .pd-app-table td{padding:10px 14px;border-bottom:1px solid #eee;color:#444;vertical-align:top;line-height:1.5}
+    .pd-app-table tr:nth-child(even) td{background:#f9f9f9}
+    .pd-app-table tr:last-child td{border-bottom:none}
+    .pd-app-highlight{font-weight:600;color:#111}
+    .pd-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .pd-download-btn{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:13px 28px;border:none;border-radius:6px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .3s;text-decoration:none}
+    .pd-download-btn:hover{background:#333;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
+    .pd-enquire-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#111;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:13px 28px;border:2px solid #111;border-radius:6px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .3s}
+    .pd-enquire-btn:hover{background:#111;color:#fff;transform:translateY(-3px)}
+    .variant-link{cursor:pointer;transition:color .2s}
+    .variant-link:hover{color:#0057ff;text-decoration:underline}
+    @media(max-width:767px){.pd-body{padding:24px 16px}.pd-hero{padding:32px 16px}.pd-title{font-size:26px}.pd-benefits{grid-template-columns:1fr}.pd-props-table td:first-child{width:140px}}
+
     /* ── FOOTER QUICK LINKS ── */
     .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
     .footer-link-btn{background:none;border:none;color:#666;font-size:11px;cursor:pointer;text-align:left;font-family:'Montserrat',sans-serif;padding:0}
@@ -1009,7 +1047,7 @@
           <li class="variant-item"><span class="variant-name">Zetawet LF</span><span class="variant-tag">Wetting Agent</span></li>
           <li class="variant-item"><span class="variant-name">Zetawet XL</span><span class="variant-tag">Wetting Agent</span></li>
           <li class="variant-item"><span class="variant-name">Zetawet XL NEW</span><span class="variant-tag">Wetting Agent</span></li>
-          <li class="variant-item"><span class="variant-name">Zetawet SWLF CONC</span><span class="variant-tag">Wetting Agent</span></li>
+          <li class="variant-item"><span class="variant-name variant-link" onclick="showPage('zetawet-swlf-conc')">Zetawet SWLF CONC</span><span class="variant-tag">Wetting Agent</span></li>
           <li class="variant-item"><span class="variant-name">Zetawet SWLF NEW</span><span class="variant-tag">Wetting Agent</span></li>
           <li class="variant-item" style="background:#f5f5f5" aria-hidden="true"></li>
         </ul>
@@ -1102,6 +1140,137 @@
       </div>
 
     </div><!-- /page-finishing -->
+
+
+    <!-- ══════════════ PRODUCT DETAIL: ZETAWET SWLF CONC ══════════════ -->
+    <div id="page-zetawet-swlf-conc" class="page pd-page" role="region" aria-label="Zetawet SWLF CONC">
+
+      <div class="pd-hero">
+        <button class="pd-back" onclick="showPage('pretreatment')">← Back to Pre-Treatment</button>
+        <div class="pd-cat-badge">PRE-TREATMENT · WETTING AGENT</div>
+        <h1 class="pd-title">Zetawet SWLF CONC</h1>
+        <p class="pd-tagline">High-concentration sulfosuccinate-free low-foam wetting &amp; re-wetting agent</p>
+      </div>
+
+      <div class="pd-body">
+
+        <!-- Description -->
+        <div class="pd-section">
+          <div class="pd-section-title">📋 Product Description</div>
+          <p class="pd-desc">Zetawet SWLF CONC emerges as a breakthrough in textile treatment, offering a revolutionary solution for fabric pre-treatment. This highly efficient re-wetting agent and detergent boasts exceptional qualities, making it an ideal choice for exhaust, semi-continuous, and continuous processing of cellulosic and synthetic fibres. Notably, it enhances fabric hydrophilicity, ensuring optimal absorption for subsequent dyeing and printing processes. Moreover, its shear-stable nature guarantees seamless performance without the risk of separation, providing peace of mind throughout production. This APEO-free formulation prioritises environmental sustainability while delivering outstanding bio-elimination properties. Its pumpable liquid form ensures effortless handling, while its compatibility with alpha-amylase enzymes, oxidative bleaching agents, alkalis, and acids underscores its versatility and reliability in textile treatment.</p>
+        </div>
+
+        <!-- Key Benefits -->
+        <div class="pd-section">
+          <div class="pd-section-title">✅ Key Benefits</div>
+          <ul class="pd-benefits">
+            <li class="pd-benefit">
+              <div class="pd-benefit-title">Enhanced Hydrophilicity</div>
+              <p class="pd-benefit-desc">Facilitates optimal absorption for dyeing and printing, ensuring consistent results and increased reproducibility.</p>
+            </li>
+            <li class="pd-benefit">
+              <div class="pd-benefit-title">Powerful Emulsification</div>
+              <p class="pd-benefit-desc">Effectively removes oily, greasy impurities, and soil particles, maintaining fabric cleanliness.</p>
+            </li>
+            <li class="pd-benefit">
+              <div class="pd-benefit-title">Versatile Compatibility</div>
+              <p class="pd-benefit-desc">Resistant to oxidative and reductive bleaching agents, stable with alkalis, acids, and enzyme-compatible.</p>
+            </li>
+            <li class="pd-benefit">
+              <div class="pd-benefit-title">Efficient Wetting &amp; Re-wetting</div>
+              <p class="pd-benefit-desc">Strong wetting properties enable low dosage usage, reducing storage needs and manual handling efforts.</p>
+            </li>
+            <li class="pd-benefit">
+              <div class="pd-benefit-title">Padding Application</div>
+              <p class="pd-benefit-desc">Ideal for heat setting processes, especially for elastane/spandex blends, offering versatility in fibre types.</p>
+            </li>
+            <li class="pd-benefit">
+              <div class="pd-benefit-title">Convenient Formulation</div>
+              <p class="pd-benefit-desc">Liquid pumpable design facilitates easy handling and automatic dispensing, suitable for high turbulence machines.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Properties -->
+        <div class="pd-section">
+          <div class="pd-section-title">⚗️ Properties</div>
+          <table class="pd-props-table">
+            <tr><td>Chemical Constitution</td><td>Formulated with fatty alcohol ethoxylate based surfactants</td></tr>
+            <tr><td>Ionic Character</td><td>Non-ionic</td></tr>
+            <tr><td>pH of 1% solution</td><td>Approx. 6 to 7</td></tr>
+            <tr><td>Specific Gravity at 20°C</td><td>Approx. 1 gm/cc to 1.5 gm/cc</td></tr>
+            <tr><td>Physical Form</td><td>Liquid</td></tr>
+            <tr><td>Storage Stability</td><td>Stable for 1 year at 20°C; sensitive above 50°C and below 0°C</td></tr>
+            <tr><td>Stability to Alkalis</td><td>Very Good</td></tr>
+            <tr><td>Stability to Acids</td><td>Very Good</td></tr>
+            <tr><td>Stability to Oxidants</td><td>Very Good</td></tr>
+          </table>
+        </div>
+
+        <!-- Applications -->
+        <div class="pd-section">
+          <div class="pd-section-title">🔬 Applications</div>
+
+          <p class="pd-app-label">1. Pre-heat Setting Bath</p>
+          <table class="pd-app-table">
+            <thead><tr><th>Function</th><th>Product</th><th>Dosage</th><th>Process Conditions</th></tr></thead>
+            <tbody>
+              <tr><td>Lubricating Agent</td><td class="pd-app-highlight">ZETALUB EAC</td><td>5 – 10 GPL</td><td rowspan="2">Pick up 80%, dwell time 30 seconds, optimum temperature 180°C</td></tr>
+              <tr><td>Wetting Agent</td><td class="pd-app-highlight">ZETAWET SWLF CONC</td><td>3 – 5 GPL</td></tr>
+            </tbody>
+          </table>
+
+          <p class="pd-app-label">2. De-mineralizing Bath</p>
+          <table class="pd-app-table">
+            <thead><tr><th>Function</th><th>Product</th><th>Dosage</th><th>Process Conditions</th></tr></thead>
+            <tbody>
+              <tr><td>Lubricating Agent</td><td class="pd-app-highlight">ZETALUB EAC</td><td>0.5% – 1.0%</td><td rowspan="3">Auxiliary dosing — raise temperature to 70°C–80°C and hold for 20 to 30 minutes</td></tr>
+              <tr><td>Wetting Agent</td><td class="pd-app-highlight">ZETAWET SWLF CONC</td><td>0.3% – 0.5%</td></tr>
+              <tr><td>Sequestering Agent</td><td class="pd-app-highlight">ZETAPLEX SQT CONC</td><td>0.3% – 0.5%</td></tr>
+            </tbody>
+          </table>
+
+          <p class="pd-app-label">3. Scouring &amp; Oxidative Bleaching Bath — RFD / RFP Fabrics</p>
+          <table class="pd-app-table">
+            <thead><tr><th>Function</th><th>Product</th><th>Dosage</th><th>Process Conditions</th></tr></thead>
+            <tbody>
+              <tr><td>Lubricating Agent</td><td class="pd-app-highlight">ZETALUB EAC</td><td>0.5% – 1.0%</td><td rowspan="6">Auxiliary dosing → raise to 60°C → Caustic Soda dosing (2 cycles) → H₂O₂ 50% dosing (2 cycles) → raise to optimum temp &amp; hold (95°C × 45–60 min or 110°C × 20–30 min) → drain bath at 80°C</td></tr>
+              <tr><td>Wetting Agent</td><td class="pd-app-highlight">ZETAWET SWLF CONC</td><td>0.4% – 0.6%</td></tr>
+              <tr><td>Sequestering Agent</td><td class="pd-app-highlight">ZETAPLEX SQT CONC</td><td>0.3% – 0.5%</td></tr>
+              <tr><td>Peroxide Stabilizer</td><td class="pd-app-highlight">ZETASTAB BR</td><td>0.2% – 0.3%</td></tr>
+              <tr><td>Alkali</td><td>Caustic Soda Flakes</td><td>1.2% – 2.5%</td></tr>
+              <tr><td>Oxidative Bleaching Agent</td><td>Hydrogen Peroxide 50%</td><td>1.5% – 3.0%</td></tr>
+            </tbody>
+          </table>
+
+          <p class="pd-app-label">4. Scouring &amp; Oxidative Bleaching Bath — Full White (FW) Fabrics</p>
+          <table class="pd-app-table">
+            <thead><tr><th>Function</th><th>Product</th><th>Dosage</th><th>Process Conditions</th></tr></thead>
+            <tbody>
+              <tr><td>Lubricating Agent</td><td class="pd-app-highlight">ZETALUB EAC</td><td>0.5% – 1.0%</td><td rowspan="8">Auxiliary dosing → raise to 60°C → Caustic Soda dosing (2 cycles) → H₂O₂ 50% dosing (2 cycles) → raise to optimum temp &amp; hold (95°C × 45–60 min or 110°C × 20–30 min) → drain at 80°C → hot wash at 80°C, add OBA (20 min dosing + 20 min holding) → drain bath</td></tr>
+              <tr><td>Wetting Agent</td><td class="pd-app-highlight">ZETAWET SWLF CONC</td><td>0.4% – 0.6%</td></tr>
+              <tr><td>Sequestering Agent</td><td class="pd-app-highlight">ZETAPLEX SQT CONC</td><td>0.3% – 0.5%</td></tr>
+              <tr><td>Peroxide Stabilizer</td><td class="pd-app-highlight">ZETASTAB BR</td><td>1.0% – 1.5%</td></tr>
+              <tr><td>Alkali</td><td>Caustic Soda Flakes</td><td>2.0% – 3.0%</td></tr>
+              <tr><td>Oxidative Bleaching Agent</td><td>Hydrogen Peroxide 50%</td><td>6.0% – 8.0%</td></tr>
+              <tr><td>OBA (Base)</td><td class="pd-app-highlight">ZETABRIGHT HCF</td><td>0.7% – 1.0%</td></tr>
+              <tr><td>OBA (Tint)</td><td class="pd-app-highlight">ZETABRIGHT BB</td><td>0.02% – 0.1%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Download & Enquire -->
+        <div class="pd-section">
+          <div class="pd-section-title">📥 Downloads &amp; Enquiry</div>
+          <div class="pd-actions">
+            <a href="tds/TDS_Zetawet_SWLF_CONC.pdf" download class="pd-download-btn">⬇ Download TDS (PDF)</a>
+            <button class="pd-enquire-btn" onclick="showPage('contact')">✉ Request Sample / Enquire</button>
+          </div>
+          <p style="margin-top:16px;font-size:11px;color:#999;line-height:1.6">Biochem Technologies retains the right to alter product and technical information. The information provided serves as a guideline and is believed to be accurate. Users are advised to assess recommendations before actual application. Safety Data Sheet (SDS) available upon request.</p>
+        </div>
+
+      </div>
+    </div><!-- /page-zetawet-swlf-conc -->
 
 
     <!-- ══════════════ WHY BIOCHEM PAGE ══════════════ -->
@@ -1435,7 +1604,8 @@
         products: 'nav-products', pretreatment: 'nav-products',
         dyeing: 'nav-products', printing: 'nav-products',
         finishing: 'nav-products', why: 'nav-why',
-        clients: 'nav-clients', contact: 'nav-contact'
+        clients: 'nav-clients', contact: 'nav-contact',
+        'zetawet-swlf-conc': 'nav-products'
       };
 
       const navEl = document.getElementById(navMap[pageId]);
