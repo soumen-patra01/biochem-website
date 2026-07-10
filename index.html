@@ -147,7 +147,9 @@
     .point-text{font-size:12px;color:#888;line-height:1.6}
 
     /* ── PRODUCTS GRID ── */
-    .products-grid{display:grid;grid-template-columns:repeat(4,1fr);border:0.5px solid #e0e0e0}
+    .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 32px;border:none}
+    .products-grid>li{display:flex}
+    .products-grid>li>.prod-card{flex:1}
     .prod-card{padding:32px 28px;display:flex;flex-direction:column;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);background:#fff;border:1px solid #e8e8e8;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.04);font-family:'Montserrat',sans-serif;text-align:left;width:100%;opacity:0;transform:translateY(24px) perspective(800px) rotateX(0deg);animation:prodCardIn .6s ease forwards;position:relative;overflow:hidden}
     .prod-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border-radius:18px;background:linear-gradient(135deg,rgba(0,87,255,0.06) 0%,transparent 50%);opacity:0;transition:opacity .4s;z-index:0;pointer-events:none}
     .prod-card:hover::before{opacity:1}
