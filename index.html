@@ -148,15 +148,19 @@
 
     /* ── PRODUCTS GRID ── */
     .products-grid{display:grid;grid-template-columns:repeat(4,1fr);border:0.5px solid #e0e0e0}
-    .prod-card{padding:28px 24px;border-right:0.5px solid #e0e0e0;display:flex;flex-direction:column;cursor:pointer;transition:background .25s ease,transform .25s ease,box-shadow .25s ease;background:none;border-top:none;border-bottom:none;font-family:'Montserrat',sans-serif;text-align:left;width:100%}
-    .prod-card:last-child{border-right:none}
-    .prod-card:hover{background:#f0f0f0;transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,0.10)}
-    .prod-card:active{transform:translateY(-2px)}
-    .prod-card:focus-visible{outline:2px solid #111;outline-offset:-2px}
-    .prod-icon{font-size:26px;color:#111;margin-bottom:16px}
-    .prod-name{font-size:14px;font-weight:700;color:#111;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase}
+    .prod-card{padding:32px 28px;display:flex;flex-direction:column;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);background:#fff;border:1px solid #e8e8e8;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,0.04);font-family:'Montserrat',sans-serif;text-align:left;width:100%;opacity:0;transform:translateY(24px);animation:prodCardIn .6s ease forwards}
+    .prod-card:nth-child(1){animation-delay:.1s}
+    .prod-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(0,87,255,0.12);border-color:#b8d4ff;background:#fafcff}
+    .prod-card:active{transform:translateY(-3px)}
+    .prod-card:focus-visible{outline:2px solid #0057B8;outline-offset:2px}
+    @keyframes prodCardIn{to{opacity:1;transform:translateY(0)}}
+    .prod-icon{font-size:32px;color:#111;margin-bottom:18px;transition:transform .3s}
+    .prod-card:hover .prod-icon{transform:scale(1.15)}
+    .prod-name{font-size:14px;font-weight:700;color:#111;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase;transition:color .3s}
+    .prod-card:hover .prod-name{color:#0057B8}
     .prod-desc{font-size:12px;color:#888;line-height:1.8;margin-bottom:20px;flex:1}
-    .prod-link{font-size:11px;color:#111;letter-spacing:1.5px;border-bottom:1.5px solid #111;padding-bottom:2px;display:inline-block;text-transform:uppercase}
+    .prod-link{font-size:11px;color:#fff;background:#111;letter-spacing:1.5px;padding:8px 18px;border-radius:6px;display:inline-block;text-transform:uppercase;transition:all .3s;border:none;align-self:flex-start}
+    .prod-card:hover .prod-link{background:#0057B8;box-shadow:0 4px 12px rgba(0,87,184,0.3)}
 
     /* ── WHY BIOCHEM ── */
     .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none}
@@ -414,9 +418,10 @@
 
       /* Products */
       .products-grid{grid-template-columns:1fr 1fr}
-      .prod-card{padding:20px 16px}
+      .prod-card{padding:24px 20px}
       .prod-name{font-size:12px}
       .prod-desc{font-size:11px}
+      .prod-link{padding:6px 14px;font-size:10px}
 
       /* Why */
       .why-grid{grid-template-columns:1fr;gap:12px}
@@ -865,11 +870,11 @@
 
       <section class="section" aria-labelledby="product-range-heading">
         <h2 class="heading" id="product-range-heading" style="display:none">Product Categories</h2>
-        <ul class="products-grid" style="grid-template-columns:repeat(2,1fr);border:0.5px solid #e0e0e0;list-style:none;padding:0">
-          <li><button type="button" class="prod-card" onclick="showPage('pretreatment')" style="border-bottom:0.5px solid #e0e0e0;border-right:0.5px solid #e0e0e0" aria-label="Explore Pre-Treatment chemicals"><span class="prod-icon" aria-hidden="true">💧</span><h2 class="prod-name">Pre-Treatment</h2><p class="prod-desc">High-performance scouring, desizing, and bleaching agents for defect-free downstream processing.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
-          <li><button type="button" class="prod-card" onclick="showPage('dyeing')" style="border-bottom:0.5px solid #e0e0e0" aria-label="Explore Dyeing Auxiliaries"><span class="prod-icon" aria-hidden="true">🎨</span><h2 class="prod-name">Dyeing Auxiliaries</h2><p class="prod-desc">Levelling agents, dispersants, and fixatives for deep, uniform, and reproducible colour every batch.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
-          <li><button type="button" class="prod-card" onclick="showPage('printing')" style="border-right:0.5px solid #e0e0e0" aria-label="Explore Printing chemicals"><span class="prod-icon" aria-hidden="true">🖌️</span><h2 class="prod-name">Printing Chemicals</h2><p class="prod-desc">Specialised auxiliaries for sharp definition, vibrant colour yield, and excellent wash fastness.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
-          <li><button type="button" class="prod-card" onclick="showPage('finishing')" aria-label="Explore Finishing agents"><span class="prod-icon" aria-hidden="true">✨</span><h2 class="prod-name">Finishing Agents</h2><p class="prod-desc">Softeners, anti-crease agents, and handle modifiers for the precise feel your buyers demand.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
+        <ul class="products-grid" style="grid-template-columns:repeat(2,1fr);gap:20px;list-style:none;padding:0 32px">
+          <li style="animation-delay:.1s"><button type="button" class="prod-card" onclick="showPage('pretreatment')" aria-label="Explore Pre-Treatment chemicals"><span class="prod-icon" aria-hidden="true">💧</span><h2 class="prod-name">Pre-Treatment</h2><p class="prod-desc">High-performance scouring, desizing, and bleaching agents for defect-free downstream processing.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
+          <li style="animation-delay:.2s"><button type="button" class="prod-card" onclick="showPage('dyeing')" aria-label="Explore Dyeing Auxiliaries"><span class="prod-icon" aria-hidden="true">🎨</span><h2 class="prod-name">Dyeing Auxiliaries</h2><p class="prod-desc">Levelling agents, dispersants, and fixatives for deep, uniform, and reproducible colour every batch.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
+          <li style="animation-delay:.3s"><button type="button" class="prod-card" onclick="showPage('printing')" aria-label="Explore Printing chemicals"><span class="prod-icon" aria-hidden="true">🖌️</span><h2 class="prod-name">Printing Chemicals</h2><p class="prod-desc">Specialised auxiliaries for sharp definition, vibrant colour yield, and excellent wash fastness.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
+          <li style="animation-delay:.4s"><button type="button" class="prod-card" onclick="showPage('finishing')" aria-label="Explore Finishing agents"><span class="prod-icon" aria-hidden="true">✨</span><h2 class="prod-name">Finishing Agents</h2><p class="prod-desc">Softeners, anti-crease agents, and handle modifiers for the precise feel your buyers demand.</p><span class="prod-link" aria-hidden="true">Explore Range →</span></button></li>
         </ul>
       </section>
 
