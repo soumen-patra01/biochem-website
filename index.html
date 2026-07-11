@@ -22,7 +22,7 @@
 
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Montserrat',sans-serif;background:#fff;color:#111}
+    body{font-family:'Montserrat',sans-serif;background:#050B16;color:#C8D2E0}
     a{text-decoration:none;color:inherit}
 
     /* ── SKIP LINK (new – keyboard/screen-reader accessibility) ── */
@@ -41,7 +41,7 @@
     button.nav-link{width:auto}
 
     /* ── NAVBAR ── */
-    .navbar{background:#111;padding:0 48px;display:flex;justify-content:space-between;align-items:center;height:64px;position:sticky;top:0;z-index:999}
+    .navbar{background:#050B16;padding:0 48px;display:flex;justify-content:space-between;align-items:center;height:64px;position:sticky;top:0;z-index:999}
     .nav-logo{color:#fff;font-size:14px;font-weight:600;letter-spacing:3px;cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif}
     .nav-links{display:flex;gap:28px;align-items:center}
     .nav-item{position:relative}
@@ -49,10 +49,10 @@
     .nav-link:hover,.nav-link.active{color:#fff;border-bottom:1.5px solid #fff;padding-bottom:2px}
 
     /* Dropdown – now uses <ul> list markup */
-    .dropdown{display:none;position:absolute;top:100%;left:0;background:#111;min-width:180px;border:0.5px solid #333;z-index:1000;margin-top:16px;list-style:none}
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:#050B16;min-width:180px;border:0.5px solid #25364D;z-index:1000;margin-top:16px;list-style:none}
     .nav-item:hover .dropdown{display:block}
-    .dropdown-item{display:block;padding:12px 16px;color:#ccc;font-size:11px;letter-spacing:1px;cursor:pointer;border-bottom:0.5px solid #222;transition:color .2s,background .2s;text-align:left}
-    .dropdown-item:hover{color:#fff;background:#1a1a1a}
+    .dropdown-item{display:block;padding:12px 16px;color:#ccc;font-size:11px;letter-spacing:1px;cursor:pointer;border-bottom:0.5px solid #25364D;transition:color .2s,background .2s;text-align:left}
+    .dropdown-item:hover{color:#fff;background:#0B1325}
 
     /* ── HAMBURGER ── */
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
@@ -62,43 +62,43 @@
     .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
     /* ── MOBILE MENU ── */
-    .mobile-menu{display:none;position:fixed;top:64px;left:0;width:100%;background:#111;z-index:998;border-top:1px solid #222;flex-direction:column;padding:16px 0}
+    .mobile-menu{display:none;position:fixed;top:64px;left:0;width:100%;background:#050B16;z-index:998;border-top:1px solid #25364D;flex-direction:column;padding:16px 0}
     .mobile-menu.open{display:flex}
-    .mobile-link{color:#ccc;font-size:12px;letter-spacing:1.5px;padding:14px 24px;cursor:pointer;border-bottom:0.5px solid #1a1a1a;transition:color .2s,background .2s;text-transform:uppercase}
+    .mobile-link{color:#ccc;font-size:12px;letter-spacing:1.5px;padding:14px 24px;cursor:pointer;border-bottom:0.5px solid #25364D;transition:color .2s,background .2s;text-transform:uppercase}
     .mobile-link:hover,.mobile-link.active{color:#fff;background:#1a1a1a}
     .mobile-submenu{background:#0a0a0a;list-style:none}
     .mobile-sublink{color:#888;font-size:11px;letter-spacing:1px;padding:12px 36px;cursor:pointer;border-bottom:0.5px solid #1a1a1a;transition:color .2s;display:block}
     .mobile-sublink:hover{color:#fff}
-    .mobile-contact-btn{margin:16px 24px 8px;background:#fff;color:#111;font-size:11px;font-weight:600;padding:12px 20px;letter-spacing:1.5px;border:none;cursor:pointer;text-align:center;font-family:'Montserrat',sans-serif}
+    .mobile-contact-btn{margin:16px 24px 8px;background:#1E7BFF;color:#fff;font-size:11px;font-weight:600;padding:12px 20px;letter-spacing:1.5px;border:none;cursor:pointer;text-align:center;font-family:'Montserrat',sans-serif}
 
     /* ── PAGES ── */
     .page{display:none}
     .page.active{display:block}
 
     /* ── SECTIONS ── */
-    .section{padding:64px 48px}
-    .section-dark{background:#111;padding:64px 48px}
-    .section-light{background:#f9f9f9;padding:64px 48px}
-    .eyebrow{font-size:11px;letter-spacing:2px;color:#888;margin-bottom:10px;text-transform:uppercase}
+    .section{padding:64px 48px;background:#0B1325}
+    .section-dark{background:#050B16;padding:64px 48px}
+    .section-light{background:#0B1325;padding:64px 48px}
+    .eyebrow{font-size:11px;letter-spacing:2px;color:#7C8AA5;margin-bottom:10px;text-transform:uppercase}
     .eyebrow-white{font-size:11px;letter-spacing:2px;color:#666;margin-bottom:10px;text-transform:uppercase}
-    .heading{font-size:30px;font-weight:500;color:#111;line-height:1.3;margin-bottom:12px}
+    .heading{font-size:30px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:12px}
     .heading-white{font-size:30px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:12px}
-    .subtext{font-size:13px;color:#888;line-height:1.9;margin-bottom:32px}
+    .subtext{font-size:13px;color:#C8D2E0;line-height:1.9;margin-bottom:32px}
     .subtext-white{font-size:13px;color:#888;line-height:1.9;margin-bottom:32px}
-    .divider-line{width:44px;height:2px;background:#111;margin:14px 0 28px}
+    .divider-line{width:44px;height:2px;background:#fff;margin:14px 0 28px}
     .divider-white{width:44px;height:2px;background:#fff;margin:14px 0 28px}
 
     /* ── HERO ── */
-    .hero{background:#111;padding:72px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;border-bottom:3px solid #fff}
+    .hero{background:linear-gradient(135deg, #050B16 0%, #08111F 30%, #0B1325 70%, #123A6D 100%);padding:72px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;border-bottom:3px solid #fff}
     .hero-tag{display:inline-block;border:1px solid #555;color:#aaa;font-size:10px;letter-spacing:2px;padding:4px 12px;margin-bottom:18px;text-transform:uppercase}
     .hero h1{color:#fff;font-size:36px;font-weight:500;line-height:1.3;letter-spacing:0.5px;margin-bottom:16px}
     .hero p{color:#aaa;font-size:13px;line-height:1.9;margin-bottom:28px}
     .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
     .btn-primary{
-      background:#fff;color:#111;font-size:11px;font-weight:700;
+      background:#1E7BFF;color:#fff;font-size:11px;font-weight:700;
       padding:14px 32px;border:none;letter-spacing:2px;cursor:pointer;
       font-family:'Montserrat',sans-serif;border-radius:8px;
-      box-shadow:0 4px 14px rgba(255,255,255,0.25);
+      box-shadow:0 4px 14px rgba(30,123,255,0.35);
       transition:transform .3s ease,box-shadow .3s ease,background .3s ease;
       position:relative;overflow:hidden;
     }
@@ -107,23 +107,23 @@
       background:linear-gradient(135deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 100%);
       opacity:0;transition:opacity .3s ease;
     }
-    .btn-primary:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(255,255,255,0.35);background:#f0f0f0}
+    .btn-primary:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(30,123,255,0.45);background:#3B8DFF}
     .btn-primary:hover::after{opacity:1}
     .btn-primary:active{transform:translateY(-1px);box-shadow:0 4px 10px rgba(255,255,255,0.2)}
 
     .btn-outline{
       background:transparent;color:#fff;font-size:11px;font-weight:700;
-      padding:14px 32px;border:2px solid #fff;letter-spacing:2px;cursor:pointer;
+      padding:14px 32px;border:2px solid #1E7BFF;letter-spacing:2px;cursor:pointer;
       font-family:'Montserrat',sans-serif;border-radius:8px;
       transition:transform .3s ease,box-shadow .3s ease,background .3s ease,color .3s ease;
       position:relative;overflow:hidden;
     }
-    .btn-outline:hover{background:#fff;color:#111;transform:translateY(-4px);box-shadow:0 12px 28px rgba(255,255,255,0.25)}
+    .btn-outline:hover{background:rgba(30,123,255,0.12);color:#fff;transform:translateY(-4px);box-shadow:0 12px 28px rgba(30,123,255,0.25)}
     .btn-outline:active{transform:translateY(-1px)}
 
     .btn-dark{
-      background:#1a1a1a;color:#fff;font-size:11px;font-weight:700;
-      padding:14px 32px;border:2px solid #444;letter-spacing:2px;cursor:pointer;
+      background:#101B2D;color:#fff;font-size:11px;font-weight:700;
+      padding:14px 32px;border:2px solid #25364D;letter-spacing:2px;cursor:pointer;
       font-family:'Montserrat',sans-serif;border-radius:8px;
       box-shadow:0 4px 14px rgba(0,0,0,0.3);
       transition:transform .3s ease,box-shadow .3s ease,background .3s ease,border-color .3s ease;
@@ -132,43 +132,43 @@
     .btn-dark:active{transform:translateY(-1px)}
 
     /* Stats – uses <dl> semantics (updated) */
-    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#333}
-    .stat-cell{background:#111;padding:32px 20px;text-align:center}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#25364D}
+    .stat-cell{background:#050B16;padding:32px 20px;text-align:center}
     .stat-num{color:#fff;font-size:36px;font-weight:500;margin-bottom:8px;display:block}
     .stat-lbl{color:#888;font-size:10px;letter-spacing:2px;text-transform:uppercase;display:block}
 
     /* ── ABOUT ── */
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-    .about-text p{font-size:13px;color:#444;line-height:1.9;margin-bottom:16px}
+    .about-text p{font-size:13px;color:#C8D2E0;line-height:1.9;margin-bottom:16px}
     .about-points{display:flex;flex-direction:column;gap:12px;list-style:none}
-    .about-point{display:flex;align-items:flex-start;gap:14px;padding:16px;border:0.5px solid #e0e0e0}
-    .point-icon{background:#111;color:#fff;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;aria-hidden:true}
-    .point-title{font-size:13px;font-weight:600;color:#111;margin-bottom:4px}
-    .point-text{font-size:12px;color:#888;line-height:1.6}
+    .about-point{display:flex;align-items:flex-start;gap:14px;padding:16px;border:0.5px solid #25364D;background:#101B2D}
+    .point-icon{background:#1E7BFF;color:#fff;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;aria-hidden:true}
+    .point-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:4px}
+    .point-text{font-size:12px;color:#7C8AA5;line-height:1.6}
 
     /* ── PRODUCTS GRID ── */
     .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 32px;border:none}
     .products-grid>li{display:flex}
     .products-grid>li>.prod-card{flex:1}
-    .prod-card{padding:32px 28px;display:flex;flex-direction:column;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);background:#fff;border:1px solid #e8e8e8;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.04);font-family:'Montserrat',sans-serif;text-align:left;width:100%;opacity:0;transform:translateY(24px) perspective(800px) rotateX(0deg);animation:prodCardIn .6s ease forwards;position:relative;overflow:hidden}
-    .prod-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border-radius:18px;background:linear-gradient(135deg,rgba(0,87,255,0.06) 0%,transparent 50%);opacity:0;transition:opacity .4s;z-index:0;pointer-events:none}
+    .prod-card{padding:32px 28px;display:flex;flex-direction:column;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);background:#101B2D;border:1px solid #25364D;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.15);font-family:'Montserrat',sans-serif;text-align:left;width:100%;opacity:0;transform:translateY(24px) perspective(800px) rotateX(0deg);animation:prodCardIn .6s ease forwards;position:relative;overflow:hidden}
+    .prod-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border-radius:18px;background:linear-gradient(135deg,rgba(30,123,255,0.12) 0%,transparent 50%);opacity:0;transition:opacity .4s;z-index:0;pointer-events:none}
     .prod-card:hover::before{opacity:1}
     .prod-card:nth-child(1){animation-delay:.1s}
-    .prod-card:hover{transform:translateY(-5px) perspective(800px) rotateX(2deg);box-shadow:0 16px 40px rgba(0,87,255,0.10),0 4px 12px rgba(0,0,0,0.06);border-color:#c4d9f5}
+    .prod-card:hover{transform:translateY(-5px) perspective(800px) rotateX(2deg);box-shadow:0 16px 40px rgba(30,123,255,0.15),0 4px 12px rgba(0,0,0,0.2);border-color:rgba(30,123,255,0.3)}
     .prod-card:active{transform:translateY(-2px) perspective(800px) rotateX(1deg)}
-    .prod-card:focus-visible{outline:2px solid #0057B8;outline-offset:2px}
+    .prod-card:focus-visible{outline:2px solid #1E7BFF;outline-offset:2px}
     @keyframes prodCardIn{to{opacity:1;transform:translateY(0) perspective(800px) rotateX(0deg)}}
-    .prod-icon{font-size:32px;color:#111;margin-bottom:18px;transition:transform .3s;position:relative;z-index:1}
+    .prod-icon{font-size:32px;color:#fff;margin-bottom:18px;transition:transform .3s;position:relative;z-index:1}
     .prod-card:hover .prod-icon{transform:scale(1.05)}
-    .prod-name{font-size:14px;font-weight:700;color:#111;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase;transition:color .3s;position:relative;z-index:1}
-    .prod-card:hover .prod-name{color:#0057B8}
-    .prod-desc{font-size:12px;color:#888;line-height:1.8;margin-bottom:20px;flex:1;position:relative;z-index:1}
-    .prod-link{font-size:11px;color:#fff;background:#111;letter-spacing:1.5px;padding:8px 18px;border-radius:6px;display:inline-block;text-transform:uppercase;transition:all .3s;border:none;align-self:flex-start;position:relative;z-index:1}
-    .prod-card:hover .prod-link{background:#0057B8;box-shadow:0 4px 12px rgba(0,87,184,0.3)}
+    .prod-name{font-size:14px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase;transition:color .3s;position:relative;z-index:1}
+    .prod-card:hover .prod-name{color:#1E7BFF}
+    .prod-desc{font-size:12px;color:#C8D2E0;line-height:1.8;margin-bottom:20px;flex:1;position:relative;z-index:1}
+    .prod-link{font-size:11px;color:#fff;background:#1E7BFF;letter-spacing:1.5px;padding:8px 18px;border-radius:6px;display:inline-block;text-transform:uppercase;transition:all .3s;border:none;align-self:flex-start;position:relative;z-index:1}
+    .prod-card:hover .prod-link{background:#3B8DFF;box-shadow:0 4px 12px rgba(30,123,255,0.3)}
 
     /* ── WHY BIOCHEM ── */
     .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none}
-    .why-card{border:0.5px solid #333;padding:28px 24px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
+    .why-card{border:0.5px solid #25364D;padding:28px 24px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
     .why-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.4);border-color:#666}
     .why-icon{font-size:24px;color:#fff;margin-bottom:14px}
     .why-title{color:#fff;font-size:14px;font-weight:600;letter-spacing:0.5px;margin-bottom:10px}
@@ -176,34 +176,34 @@
 
     /* ── CLIENTS ── */
     .clients-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;list-style:none}
-    .client-pill{background:#fff;border:0.5px solid #ddd;padding:8px 18px;font-size:11px;color:#444;letter-spacing:0.5px;border-radius:50px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-    .client-pill:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.08);border-color:#111}
+    .client-pill{background:#101B2D;border:0.5px solid #25364D;padding:8px 18px;font-size:11px;color:#C8D2E0;letter-spacing:0.5px;border-radius:50px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    .client-pill:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.3);border-color:#1E7BFF}
 
     /* ── TESTIMONIALS – now uses <figure>/<blockquote> ── */
     .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .testi-card{border:0.5px solid #e0e0e0;padding:28px 24px;margin:0;border-radius:16px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-    .testi-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.10);border-color:#111}
-    .testi-quote{font-size:13px;color:#444;line-height:1.9;font-style:italic;margin-bottom:18px;border-left:3px solid #111;padding-left:16px}
-    .testi-name{font-size:12px;font-weight:600;color:#111;letter-spacing:0.5px;display:block;font-style:normal}
+    .testi-card{border:0.5px solid #25364D;padding:28px 24px;margin:0;border-radius:16px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;background:#101B2D}
+    .testi-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.3);border-color:#1E7BFF}
+    .testi-quote{font-size:13px;color:#C8D2E0;line-height:1.9;font-style:italic;margin-bottom:18px;border-left:3px solid #1E7BFF;padding-left:16px}
+    .testi-name{font-size:12px;font-weight:600;color:#fff;letter-spacing:0.5px;display:block;font-style:normal}
     .testi-role{font-size:11px;color:#888;margin-top:4px;display:block}
 
     /* ── CTA ── */
-    .cta-section{background:#111;padding:64px 48px;display:flex;justify-content:space-between;align-items:center;gap:32px}
+    .cta-section{background:#0B1325;padding:64px 48px;display:flex;justify-content:space-between;align-items:center;gap:32px}
     .cta-text h2{color:#fff;font-size:22px;font-weight:500;margin-bottom:8px}
     .cta-text p{color:#888;font-size:13px}
     .cta-btns{display:flex;gap:12px;flex-shrink:0}
 
     /* ── FOOTER ── */
-    .footer{background:#111;border-top:1px solid #222;padding:32px 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+    .footer{background:#030812;border-top:1px solid #222;padding:32px 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
     .footer-logo{color:#fff;font-size:13px;font-weight:600;letter-spacing:3px;margin-bottom:8px}
     .footer-tagline{color:#555;font-size:11px}
     .footer-offices{display:flex;gap:48px}
     .office-city{color:#fff;font-size:11px;letter-spacing:1.5px;margin-bottom:6px;text-transform:uppercase}
     .office-detail{color:#666;font-size:11px;line-height:1.8}
-    .footer-copy{color:#444;font-size:11px;margin-top:24px;padding-top:24px;border-top:0.5px solid #222;text-align:center;width:100%;letter-spacing:0.5px}
+    .footer-copy{color:#444;font-size:11px;margin-top:24px;padding-top:24px;border-top:0.5px solid #25364D;text-align:center;width:100%;letter-spacing:0.5px}
 
     /* ── BREADCRUMB (updated to use <ol>) ── */
-    .breadcrumb{font-size:10px;letter-spacing:1.5px;color:#666;margin-bottom:16px;text-transform:uppercase}
+    .breadcrumb{font-size:10px;letter-spacing:1.5px;color:#7C8AA5;margin-bottom:16px;text-transform:uppercase}
     .breadcrumb ol{list-style:none;display:flex;gap:6px;align-items:center}
     .breadcrumb li{display:inline}
     .breadcrumb li+li::before{content:" / ";color:#666}
@@ -212,50 +212,50 @@
     .breadcrumb [aria-current="page"]{color:#fff}
 
     /* ── PRODUCT SUB PAGES ── */
-    .product-hero{background:#111;padding:48px;border-bottom:3px solid #fff}
-    .product-group{border-bottom:0.5px solid #e0e0e0}
-    .group-header{background:#111;padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
-    .group-header.alt{background:#fff;border-left:4px solid #111;padding-left:44px}
+    .product-hero{background:#050B16;padding:48px;border-bottom:3px solid #fff}
+    .product-group{border-bottom:0.5px solid #25364D}
+    .group-header{background:#050B16;padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
+    .group-header.alt{background:#0B1325;border-left:4px solid #1E7BFF;padding-left:44px}
     .group-name{color:#fff;font-size:14px;font-weight:500;letter-spacing:2px;text-transform:uppercase}
-    .group-name.dark{color:#111}
+    .group-name.dark{color:#fff}
     .group-sub{font-size:11px;color:#888;margin-top:4px}
     .group-badge{background:#fff;color:#111;font-size:10px;font-weight:600;padding:4px 12px;letter-spacing:1px;text-transform:uppercase}
-    .group-badge.dark{background:#111;color:#fff}
+    .group-badge.dark{background:#1E7BFF;color:#fff}
     .variants-grid{display:grid;grid-template-columns:1fr 1fr;list-style:none;gap:16px;padding:20px 32px}
-    .variant-item{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:#fff;border-radius:10px;border:1px solid #e8e8e8;box-shadow:0 2px 8px rgba(0,0,0,0.04);cursor:default;transition:all .35s cubic-bezier(.4,0,.2,1);opacity:0;transform:translateY(20px);animation:variantFadeIn .5s ease forwards}
-    .variant-item:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,87,255,0.10);border-color:#b8d4ff}
+    .variant-item{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:#101B2D;border-radius:10px;border:1px solid #25364D;box-shadow:0 2px 8px rgba(0,0,0,0.04);cursor:default;transition:all .35s cubic-bezier(.4,0,.2,1);opacity:0;transform:translateY(20px);animation:variantFadeIn .5s ease forwards}
+    .variant-item:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(30,123,255,0.15);border-color:rgba(30,123,255,0.3)}
     .variant-item:nth-child(1){animation-delay:.05s}.variant-item:nth-child(2){animation-delay:.1s}.variant-item:nth-child(3){animation-delay:.15s}.variant-item:nth-child(4){animation-delay:.2s}.variant-item:nth-child(5){animation-delay:.25s}.variant-item:nth-child(6){animation-delay:.3s}.variant-item:nth-child(7){animation-delay:.35s}.variant-item:nth-child(8){animation-delay:.4s}
     @keyframes variantFadeIn{to{opacity:1;transform:translateY(0)}}
-    .variant-name{font-size:13px;color:#222;letter-spacing:0.5px;font-weight:600;transition:color .25s}
-    .variant-item:hover .variant-name{color:#0057B8}
-    .variant-tag{font-size:10px;color:#fff;background:linear-gradient(135deg,#0057B8,#003d82);padding:4px 12px;border-radius:20px;letter-spacing:0.5px;font-weight:600;border:none;transition:all .3s;flex-shrink:0;white-space:nowrap}
-    .variant-item:hover .variant-tag{background:linear-gradient(135deg,#0068e0,#0057B8);box-shadow:0 2px 8px rgba(0,87,184,0.25)}
+    .variant-name{font-size:13px;color:#C8D2E0;letter-spacing:0.5px;font-weight:600;transition:color .25s}
+    .variant-item:hover .variant-name{color:#1E7BFF}
+    .variant-tag{font-size:10px;color:#fff;background:linear-gradient(135deg,#1E7BFF,#00AEEF);padding:4px 12px;border-radius:20px;letter-spacing:0.5px;font-weight:600;border:none;transition:all .3s;flex-shrink:0;white-space:nowrap}
+    .variant-item:hover .variant-tag{background:linear-gradient(135deg,#3B8DFF,#1E7BFF);box-shadow:0 2px 8px rgba(30,123,255,0.25)}
 
     /* ── CONTACT ── */
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
     .contact-form{display:flex;flex-direction:column;gap:16px}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .form-group{display:flex;flex-direction:column;gap:6px}
-    .form-label{font-size:11px;color:#111;letter-spacing:1px;text-transform:uppercase}
-    .form-input{padding:12px 14px;border:0.5px solid #e0e0e0;font-family:'Montserrat',sans-serif;font-size:13px;color:#111;outline:none;transition:border .2s}
-    .form-input:focus{border-color:#111}
-    .form-textarea{padding:12px 14px;border:0.5px solid #e0e0e0;font-family:'Montserrat',sans-serif;font-size:13px;color:#111;outline:none;resize:vertical;min-height:120px;transition:border .2s}
-    .form-textarea:focus{border-color:#111}
+    .form-label{font-size:11px;color:#C8D2E0;letter-spacing:1px;text-transform:uppercase}
+    .form-input{padding:12px 14px;border:0.5px solid #25364D;font-family:'Montserrat',sans-serif;font-size:13px;color:#C8D2E0;outline:none;transition:border .2s;background:#101B2D}
+    .form-input:focus{border-color:#1E7BFF}
+    .form-textarea{padding:12px 14px;border:0.5px solid #25364D;font-family:'Montserrat',sans-serif;font-size:13px;color:#C8D2E0;outline:none;resize:vertical;min-height:120px;transition:border .2s;background:#101B2D}
+    .form-textarea:focus{border-color:#1E7BFF}
     .contact-info{display:flex;flex-direction:column;gap:24px}
     .contact-card{
-      border:0.5px solid #e0e0e0;
+      border:0.5px solid #25364D;
       padding:24px;
       border-radius:12px;
       transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-      background:#fff;
+      background:#101B2D;
       cursor:default;
     }
     .contact-card:hover{
       transform:translateY(-6px);
-      box-shadow:0 12px 32px rgba(0,0,0,0.10);
-      border-color:#111;
+      box-shadow:0 12px 32px rgba(0,0,0,0.3);
+      border-color:#1E7BFF;
     }
-    .contact-card-title{font-size:13px;font-weight:600;color:#111;letter-spacing:0.5px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+    .contact-card-title{font-size:13px;font-weight:600;color:#fff;letter-spacing:0.5px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
     .contact-card-detail{font-size:13px;color:#888;line-height:1.9}
     .whatsapp-btn{
       background:#25D366;
@@ -284,75 +284,75 @@
 
     /* ── ABOUT PAGE ── */
     .about-story{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-    .about-story-text p{font-size:14px;color:#444;line-height:2;margin-bottom:18px}
+    .about-story-text p{font-size:14px;color:#C8D2E0;line-height:2;margin-bottom:18px}
     .about-values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px;list-style:none}
-    .value-card{border:0.5px solid #e0e0e0;padding:20px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
-    .value-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,0.09);border-color:#111}
-    .value-icon{font-size:22px;color:#111;margin-bottom:10px}
-    .value-title{font-size:13px;font-weight:600;color:#111;margin-bottom:6px}
+    .value-card{border:0.5px solid #25364D;padding:20px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
+    .value-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,0.3);border-color:#1E7BFF}
+    .value-icon{font-size:22px;color:#fff;margin-bottom:10px}
+    .value-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:6px}
     .value-text{font-size:12px;color:#888;line-height:1.7}
     .location-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
-    .location-card{background:#111;padding:28px}
+    .location-card{background:#101B2D;padding:28px}
     .location-city{color:#fff;font-size:16px;font-weight:500;letter-spacing:2px;margin-bottom:4px;text-transform:uppercase}
     .location-detail{color:#888;font-size:13px;line-height:1.9}
 
     /* ── WHY PAGE ── */
-    .why-hero{background:#111;padding:64px 48px;border-bottom:3px solid #fff}
-    .why-full-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:0.5px solid #e0e0e0;list-style:none}
-    .why-full-card{padding:36px 28px;border-right:0.5px solid #e0e0e0;border-bottom:0.5px solid #e0e0e0;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:default}
+    .why-hero{background:#050B16;padding:64px 48px;border-bottom:3px solid #fff}
+    .why-full-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:0.5px solid #25364D;list-style:none}
+    .why-full-card{padding:36px 28px;border-right:0.5px solid #25364D;border-bottom:0.5px solid #25364D;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:default}
     .why-full-card:nth-child(3n){border-right:none}
-    .why-full-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,0.09);background:#fafafa}
-    .why-full-icon{font-size:28px;color:#111;margin-bottom:16px}
-    .why-full-title{font-size:15px;font-weight:600;color:#111;margin-bottom:10px}
-    .why-full-text{font-size:13px;color:#888;line-height:1.9}
+    .why-full-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,0.3);background:#101B2D}
+    .why-full-icon{font-size:28px;color:#fff;margin-bottom:16px}
+    .why-full-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:10px}
+    .why-full-text{font-size:13px;color:#C8D2E0;line-height:1.9}
 
     /* ── CLIENTS PAGE ── */
     .clients-full-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;list-style:none}
-    .client-card{border:0.5px solid #e0e0e0;padding:24px;text-align:center;border-radius:16px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
-    .client-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,0.09);border-color:#111}
-    .client-name{font-size:13px;font-weight:600;color:#111;margin-bottom:6px;letter-spacing:0.5px}
+    .client-card{border:0.5px solid #25364D;padding:24px;text-align:center;border-radius:16px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
+    .client-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,0.3);border-color:#1E7BFF}
+    .client-name{font-size:13px;font-weight:600;color:#fff;margin-bottom:6px;letter-spacing:0.5px}
     .client-type{font-size:11px;color:#888}
 
     /* ── PAGE HEADER ── */
-    .page-header{background:#111;padding:48px;border-bottom:3px solid #fff}
+    .page-header{background:#050B16;padding:48px;border-bottom:3px solid #fff}
 
     /* ══ PRODUCT DETAIL PAGES ══ */
-    .pd-page{background:#f4f4f4}
-    .pd-hero{background:#111;padding:48px;border-bottom:3px solid #fff;position:relative}
+    .pd-page{background:#050B16}
+    .pd-hero{background:#050B16;padding:48px;border-bottom:3px solid #fff;position:relative}
     .pd-back{background:none;border:1px solid rgba(255,255,255,0.25);color:#aaa;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:7px 14px;border-radius:5px;cursor:pointer;font-family:'Montserrat',sans-serif;margin-bottom:20px;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
     .pd-back:hover{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.5)}
     .pd-cat-badge{display:inline-block;background:rgba(255,255,255,0.12);color:#bbb;font-size:10px;font-weight:700;letter-spacing:2px;padding:4px 12px;border-radius:4px;margin-bottom:14px}
     .pd-title{font-size:38px;font-weight:800;color:#fff;margin:0 0 6px;letter-spacing:-0.5px}
     .pd-tagline{color:#888;font-size:14px;margin:0}
     .pd-body{max-width:980px;margin:0 auto;padding:48px 48px 64px}
-    .pd-section{background:#fff;border-radius:10px;padding:32px;margin-bottom:24px;border:1px solid #e8e8e8}
-    .pd-section-title{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#111;margin:0 0 20px;padding-bottom:12px;border-bottom:2px solid #111;display:flex;align-items:center;gap:8px}
-    .pd-desc{font-size:14px;line-height:1.9;color:#444;margin:0}
+    .pd-section{background:#101B2D;border-radius:10px;padding:32px;margin-bottom:24px;border:1px solid #25364D}
+    .pd-section-title{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;margin:0 0 20px;padding-bottom:12px;border-bottom:2px solid #fff;display:flex;align-items:center;gap:8px}
+    .pd-desc{font-size:14px;line-height:1.9;color:#C8D2E0;margin:0}
     .pd-benefits{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .pd-benefit{background:#f8f8f8;border-left:3px solid #111;padding:14px 16px;border-radius:0 8px 8px 0}
-    .pd-benefit-title{font-size:12px;font-weight:700;color:#111;margin-bottom:4px}
-    .pd-benefit-desc{font-size:12px;color:#666;line-height:1.6;margin:0}
+    .pd-benefit{background:#0B1325;border-left:3px solid #1E7BFF;padding:14px 16px;border-radius:0 8px 8px 0}
+    .pd-benefit-title{font-size:12px;font-weight:700;color:#fff;margin-bottom:4px}
+    .pd-benefit-desc{font-size:12px;color:#C8D2E0;line-height:1.6;margin:0}
     .pd-props-table{width:100%;border-collapse:collapse}
-    .pd-props-table tr{border-bottom:1px solid #eee}
+    .pd-props-table tr{border-bottom:1px solid #25364D}
     .pd-props-table tr:last-child{border-bottom:none}
     .pd-props-table td{padding:12px 16px;font-size:13px;vertical-align:top}
-    .pd-props-table td:first-child{font-weight:700;color:#111;width:260px;background:#f8f8f8;font-size:12px;letter-spacing:0.3px}
-    .pd-props-table td:last-child{color:#444}
+    .pd-props-table td:first-child{font-weight:700;color:#C8D2E0;width:260px;background:#0B1325;font-size:12px;letter-spacing:0.3px}
+    .pd-props-table td:last-child{color:#C8D2E0}
     .pd-app-label{font-size:12px;font-weight:700;color:#555;letter-spacing:0.5px;margin:0 0 8px;text-transform:uppercase}
     .pd-app-table{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:12px}
-    .pd-app-table th{background:#111;color:#fff;padding:10px 14px;text-align:left;font-weight:700;letter-spacing:0.5px;font-size:11px}
-    .pd-app-table td{padding:10px 14px;border-bottom:1px solid #eee;color:#444;vertical-align:top;line-height:1.5}
-    .pd-app-table tr:nth-child(even) td{background:#f9f9f9}
+    .pd-app-table th{background:#050B16;color:#fff;padding:10px 14px;text-align:left;font-weight:700;letter-spacing:0.5px;font-size:11px}
+    .pd-app-table td{padding:10px 14px;border-bottom:1px solid #25364D;color:#C8D2E0;vertical-align:top;line-height:1.5}
+    .pd-app-table tr:nth-child(even) td{background:#0B1325}
     .pd-app-table tr:last-child td{border-bottom:none}
-    .pd-app-highlight{font-weight:600;color:#111}
+    .pd-app-highlight{font-weight:600;color:#fff}
     .pd-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-    .pd-download-btn{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:13px 28px;border:none;border-radius:6px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .3s;text-decoration:none}
-    .pd-download-btn:hover{background:#333;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
-    .pd-enquire-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#111;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:13px 28px;border:2px solid #111;border-radius:6px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .3s}
-    .pd-enquire-btn:hover{background:#111;color:#fff;transform:translateY(-3px)}
+    .pd-download-btn{display:inline-flex;align-items:center;gap:8px;background:#1E7BFF;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:13px 28px;border:none;border-radius:6px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .3s;text-decoration:none}
+    .pd-download-btn:hover{background:#3B8DFF;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
+    .pd-enquire-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:13px 28px;border:2px solid #1E7BFF;border-radius:6px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .3s}
+    .pd-enquire-btn:hover{background:rgba(30,123,255,0.12);color:#fff;transform:translateY(-3px)}
     .variant-link{cursor:pointer;transition:color .25s}
-    .variant-link:hover{color:#0057B8}
-    @media(max-width:767px){.pd-body{padding:24px 16px}.pd-hero{padding:32px 16px}.pd-title{font-size:26px}.pd-benefits{grid-template-columns:1fr}.pd-props-table td:first-child{width:140px}}
+    .variant-link:hover{color:#1E7BFF}
+    @media(max-width:767px){.pd-body{padding:24px 16px}.pd-hero{padding:32px 16px}.pd-title{font-size:26px}.pd-benefits{grid-template-columns:1fr}.pd-props-table td:first-child{width:140px}.pd-section{overflow-x:auto;max-width:100%;box-sizing:border-box}.pd-app-table{min-width:auto;font-size:11px;table-layout:fixed;width:100%}.pd-app-table th,.pd-app-table td{padding:8px 6px;word-wrap:break-word}}
 
     /* ── FOOTER QUICK LINKS ── */
     .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
@@ -617,7 +617,7 @@
               <p>No shortcuts on quality. No inflated margins. Just consistent performance that gives your mill a real competitive edge.</p>
             </div>
             <br>
-            <button type="button" class="btn-primary" onclick="showPage('about')" style="background:#111;color:#fff;border:none">READ MORE →</button>
+            <button type="button" class="btn-primary" onclick="showPage('about')" style="background:#1E7BFF;color:#fff;border:none">READ MORE →</button>
           </div>
 
           <!-- About points: <ul> list semantics -->
@@ -663,7 +663,7 @@
         <p class="subtext">High-performance chemicals covering the entire textile wet processing chain.</p>
 
         <!-- Products: <ul> list; each card is a <li> + <button> for keyboard nav -->
-        <ul class="products-grid" style="list-style:none;padding:0">
+        <ul class="products-grid" style="list-style:none;padding:0 32px;gap:20px">
           <li>
             <button type="button" class="prod-card" onclick="showPage('pretreatment')" aria-label="Explore Pre-Treatment chemicals">
               <span class="prod-icon" aria-hidden="true">💧</span>
@@ -910,7 +910,7 @@
         <div class="group-header"><div><h2 class="group-name">TRU</h2><p class="group-sub">Alkali donor for reactive dyeing</p></div><span class="group-badge">1 VARIANT</span></div>
         <ul class="variants-grid">
           <li class="variant-item"><span class="variant-name">Tru Alkali</span><span class="variant-tag">Alkali Agent</span></li>
-          <li class="variant-item" style="background:#f5f5f5" aria-hidden="true"></li>
+          <li class="variant-item" style="background:#0B1325" aria-hidden="true"></li>
         </ul>
       </article>
 
@@ -926,7 +926,7 @@
         <div class="group-header"><div><h2 class="group-name">ZETADFOAM</h2><p class="group-sub">Antifoam agent for dye baths</p></div><span class="group-badge">1 VARIANT</span></div>
         <ul class="variants-grid">
           <li class="variant-item"><span class="variant-name">Zetadfoam TC</span><span class="variant-tag">Antifoam</span></li>
-          <li class="variant-item" style="background:#f5f5f5" aria-hidden="true"></li>
+          <li class="variant-item" style="background:#0B1325" aria-hidden="true"></li>
         </ul>
       </article>
 
@@ -968,7 +968,7 @@
           <li class="variant-item"><span class="variant-name">Zetawash HPS CONC-I</span><span class="variant-tag">Soaping</span></li>
           <li class="variant-item"><span class="variant-name variant-link" onclick="showPage('zetawash-hps-new')">Zetawash HPS NEW</span><span class="variant-tag">Soaping</span></li>
           <li class="variant-item"><span class="variant-name">Zetawash CONC</span><span class="variant-tag">Soaping</span></li>
-          <li class="variant-item" style="background:#f5f5f5" aria-hidden="true"></li>
+          <li class="variant-item" style="background:#0B1325" aria-hidden="true"></li>
         </ul>
       </article>
 
@@ -1062,7 +1062,7 @@
           <li class="variant-item"><span class="variant-name">Zetawet XL NEW</span><span class="variant-tag">Wetting Agent</span></li>
           <li class="variant-item"><span class="variant-name variant-link" onclick="showPage('zetawet-swlf-conc')">Zetawet SWLF CONC</span><span class="variant-tag">Wetting Agent</span></li>
           <li class="variant-item"><span class="variant-name">Zetawet SWLF NEW</span><span class="variant-tag">Wetting Agent</span></li>
-          <li class="variant-item" style="background:#f5f5f5" aria-hidden="true"></li>
+          <li class="variant-item" style="background:#0B1325" aria-hidden="true"></li>
         </ul>
       </article>
 
@@ -1356,7 +1356,7 @@
           </table>
 
           <p class="pd-app-label" style="margin-top:20px">De-finish / Re-dyeing Procedures</p>
-          <div style="background:#f8f8f8;border-left:3px solid #111;padding:16px 20px;border-radius:0 8px 8px 0;font-size:13px;color:#444;line-height:1.8">
+          <div style="background:#0B1325;border-left:3px solid #1E7BFF;padding:16px 20px;border-radius:0 8px 8px 0;font-size:13px;color:#C8D2E0;line-height:1.8">
             <p style="margin:0 0 10px"><strong>Masking the cationic charge:</strong><br>Apply 2 GPL ZETA MOL WSD Powder + 3 GPL Formic Acid 85% — 30 min at 90°C</p>
             <p style="margin:0 0 10px"><strong>Correcting unevenness:</strong><br>1. Strip dyes per dye manufacturer's procedure<br>2. Apply 2 GPL ZETA MOL WSD Powder + 3 GPL Formic Acid 85% — 30 min at 90°C</p>
             <p style="margin:0 0 10px"><strong>Stripping of dyes &amp; Zetafix FF:</strong></p>
@@ -1445,7 +1445,7 @@
         <!-- Applications -->
         <div class="pd-section">
           <div class="pd-section-title">🔬 Applications &amp; Dosage</div>
-          <div style="background:#f8f8f8;border-left:3px solid #111;padding:16px 20px;border-radius:0 8px 8px 0;font-size:13px;color:#444;line-height:1.9">
+          <div style="background:#0B1325;border-left:3px solid #1E7BFF;padding:16px 20px;border-radius:0 8px 8px 0;font-size:13px;color:#C8D2E0;line-height:1.9">
             <p style="margin:0 0 12px"><strong>Method 1 — Post-bleach bath / Dye bath:</strong><br>
             Dosage: <strong>0.3% – 0.5%</strong> on weight of fabric<br>
             Add to the post-bleach bath during the subsequent hot wash, or directly into the dye bath before dye addition.</p>
@@ -1530,7 +1530,7 @@
         <!-- Applications -->
         <div class="pd-section">
           <div class="pd-section-title">🔬 Applications &amp; Dosage</div>
-          <div style="background:#f8f8f8;border-left:3px solid #111;padding:16px 20px;border-radius:0 8px 8px 0;font-size:13px;color:#444;line-height:1.9">
+          <div style="background:#0B1325;border-left:3px solid #1E7BFF;padding:16px 20px;border-radius:0 8px 8px 0;font-size:13px;color:#C8D2E0;line-height:1.9">
             <p style="margin:0 0 10px"><strong>Addition:</strong> Must be added to the dye bath at the start of the HT exhaust dyeing cycle, before the dyes. Can be diluted with water in all proportions.</p>
             <p style="margin:0 0 10px"><strong>Recommended Dosage:</strong> <strong>0.5 – 2.0 GPL</strong> in the dyebath (for PES/CEL blends and CEL fibres).</p>
             <p style="margin:0">Exact dosage depends on dye quantity, water composition, fabric characteristics, salt conditions, liquor ratio, and other chemicals present. Determine precise dosage through preliminary trials for best results.</p>
@@ -1739,7 +1739,7 @@
         <div class="pd-section">
           <div class="pd-section-title">🔬 Applications &amp; Dosage</div>
 
-          <div style="background:#f8f8f8;border-left:3px solid #111;padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#444;line-height:1.8;margin-bottom:24px">
+          <div style="background:#0B1325;border-left:3px solid #1E7BFF;padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#C8D2E0;line-height:1.8;margin-bottom:24px">
             <strong>Recommended Dosage:</strong> 1.0 – 2.0 GPL or <strong>0.5% – 1.0%</strong> on weight of material (depending upon liquor ratio, machine parameters, conditions, and fabric quality).<br>
             <strong>Addition:</strong> Add to the treatment bath before the goods are entered. Dilute by pouring onto warm water and stirring before addition. The product is pumpable.
           </div>
@@ -1872,7 +1872,7 @@
         <div class="pd-section">
           <div class="pd-section-title">🔬 Applications &amp; Dosage</div>
 
-          <div style="background:#fff8e1;border-left:3px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#444;line-height:1.8;margin-bottom:20px">
+          <div style="background:#0B1325;border-left:3px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#C8D2E0;line-height:1.8;margin-bottom:20px">
             <strong>Why demineralise before bleaching?</strong><br>
             Fabric carries metallic impurities from feed water hardness, processing chemicals (salt, soda ash, caustic soda), and natural fibres. If not removed before the bleach bath, these cause: catalytic H₂O₂ decomposition → fibre damage &amp; pinholes · uneven bleaching · reduced whiteness · scale deposits on machinery.
           </div>
@@ -1886,7 +1886,7 @@
             </tbody>
           </table>
 
-          <div style="background:#f8f8f8;border-left:3px solid #111;padding:14px 18px;border-radius:0 8px 8px 0;font-size:12px;color:#555;line-height:1.8;margin-top:4px">
+          <div style="background:#0B1325;border-left:3px solid #1E7BFF;padding:14px 18px;border-radius:0 8px 8px 0;font-size:12px;color:#C8D2E0;line-height:1.8;margin-top:4px">
             <strong>Note:</strong> Zetaplex DM is specifically recommended as the final preparatory step immediately before the bleaching bath. The acidic treatment at 70°C – 85°C ensures thorough removal and complexing of heavy metals from both the fibre and the process water, creating ideal conditions for controlled, uniform peroxide bleaching with maximum whiteness and fibre safety.
           </div>
         </div>
@@ -1983,7 +1983,7 @@
         <div class="pd-section">
           <div class="pd-section-title">🔬 Applications &amp; Dosage</div>
 
-          <div style="background:#fff8e1;border-left:3px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#444;line-height:1.8;margin-bottom:20px">
+          <div style="background:#0B1325;border-left:3px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#C8D2E0;line-height:1.8;margin-bottom:20px">
             <strong>Problems caused by uncontrolled heavy metal ions:</strong><br>
             Lower whiteness of bleached fabric · White spots &amp; uneven tone on dyed substrates · Reduction in dye yield &amp; reproducibility · Unlevel dyeing (especially in yarn dyeing) · Reduction in fastness properties · Loss of "Right First Time" production
           </div>
@@ -2708,16 +2708,16 @@
                 ></textarea>
               </div>
 
-              <button type="submit" id="submitBtn" class="btn-primary" style="background:#111;color:#fff;width:100%;padding:14px;font-size:12px">
+              <button type="submit" id="submitBtn" class="btn-primary" style="background:#1E7BFF;color:#fff;width:100%;padding:14px;font-size:12px">
                 SEND MESSAGE
               </button>
 
               <!-- Success / Error messages -->
-              <div id="formSuccess" style="display:none;background:#f0fff4;border:1px solid #25D366;border-radius:8px;padding:16px;text-align:center;margin-top:8px">
+              <div id="formSuccess" style="display:none;background:#0B1325;border:1px solid #22C55E;border-radius:8px;padding:16px;text-align:center;margin-top:8px">
                 <p style="color:#128C7E;font-size:13px;font-weight:600;">✅ Message Sent Successfully!</p>
                 <p style="color:#444;font-size:12px;margin-top:4px">We will get back to you within 24 hours.</p>
               </div>
-              <div id="formError" style="display:none;background:#fff5f5;border:1px solid #e53e3e;border-radius:8px;padding:16px;text-align:center;margin-top:8px">
+              <div id="formError" style="display:none;background:#0B1325;border:1px solid #e53e3e;border-radius:8px;padding:16px;text-align:center;margin-top:8px">
                 <p style="color:#e53e3e;font-size:13px;font-weight:600;">❌ Something went wrong.</p>
                 <p style="color:#444;font-size:12px;margin-top:4px">Please try again or contact us directly on WhatsApp.</p>
               </div>
