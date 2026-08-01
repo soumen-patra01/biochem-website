@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biochem Admin — Product Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:#050B16;color:#C8D2E0;min-height:100vh}
+
+    .admin-header{background:#030812;border-bottom:1px solid #25364D;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .admin-logo{color:#fff;font-size:14px;font-weight:700;letter-spacing:2px}
+    .admin-badge{background:#1E7BFF;color:#fff;font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:1px}
+
+    .admin-nav{display:flex;gap:0;border-bottom:1px solid #25364D;background:#030812;position:sticky;top:53px;z-index:99}
+    .admin-nav button{background:none;border:none;color:#7C8AA5;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;padding:14px 24px;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+    .admin-nav button:hover{color:#fff}
+    .admin-nav button.active{color:#1E7BFF;border-bottom-color:#1E7BFF}
+
+    .admin-body{max-width:900px;margin:0 auto;padding:32px 24px 80px}
+
+    .panel{display:none}
+    .panel.active{display:block}
+
+    h2{color:#fff;font-size:20px;font-weight:600;margin-bottom:8px}
+    .panel-desc{color:#7C8AA5;font-size:13px;margin-bottom:28px;line-height:1.6}
+
+    .form-section{background:#0B1325;border:1px solid #25364D;border-radius:12px;padding:24px;margin-bottom:20px}
+    .form-section-title{color:#fff;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #25364D;display:flex;align-items:center;gap:8px}
+
+    .field{margin-bottom:16px}
+    .field:last-child{margin-bottom:0}
+    .field label{display:block;color:#C8D2E0;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+    .field input,.field textarea,.field select{width:100%;padding:10px 14px;background:#101B2D;border:1px solid #25364D;border-radius:8px;color:#C8D2E0;font-family:'Inter',sans-serif;font-size:13px;outline:none;transition:border-color .2s}
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:#1E7BFF;box-shadow:0 0 0 3px rgba(30,123,255,0.15)}
+    .field textarea{min-height:100px;resize:vertical}
+    .field .hint{color:#7C8AA5;font-size:11px;margin-top:4px}
+
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+    .benefits-list{display:flex;flex-direction:column;gap:12px}
+    .benefit-entry{background:#101B2D;border:1px solid #25364D;border-radius:8px;padding:14px;position:relative}
+    .benefit-entry .field{margin-bottom:10px}
+    .benefit-entry .field:last-child{margin-bottom:0}
+    .remove-btn{position:absolute;top:10px;right:10px;background:#e53e3e;color:#fff;border:none;font-size:10px;font-weight:700;padding:4px 8px;border-radius:4px;cursor:pointer;font-family:'Inter',sans-serif}
+    .remove-btn:hover{background:#c53030}
+
+    .add-btn{background:none;border:1px dashed #25364D;color:#7C8AA5;font-size:12px;font-weight:600;padding:12px;width:100%;border-radius:8px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+    .add-btn:hover{border-color:#1E7BFF;color:#1E7BFF}
+
+    .props-list{display:flex;flex-direction:column;gap:8px}
+    .prop-entry{display:grid;grid-template-columns:1fr 1fr 30px;gap:8px;align-items:center}
+    .prop-entry input{padding:8px 12px;font-size:12px}
+    .prop-remove{background:none;border:none;color:#e53e3e;font-size:16px;cursor:pointer;padding:4px}
+
+    .app-entry{background:#101B2D;border:1px solid #25364D;border-radius:8px;padding:14px;margin-bottom:12px;position:relative}
+    .app-rows{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+    .app-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+    .app-row input{padding:8px 10px;font-size:12px}
+
+    .generate-btn{background:#1E7BFF;color:#fff;font-size:13px;font-weight:700;padding:14px 32px;border:none;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:1px;width:100%;margin-top:24px;transition:all .3s;box-shadow:0 8px 24px rgba(30,123,255,0.35)}
+    .generate-btn:hover{background:#3B8DFF;transform:translateY(-2px);box-shadow:0 12px 32px rgba(30,123,255,0.45)}
+
+    .output-area{margin-top:24px;display:none}
+    .output-area.show{display:block}
+    .output-tabs{display:flex;gap:0;margin-bottom:0}
+    .output-tab{background:#101B2D;border:1px solid #25364D;color:#7C8AA5;font-size:11px;font-weight:600;padding:10px 20px;cursor:pointer;font-family:'Inter',sans-serif;border-bottom:none;letter-spacing:0.5px}
+    .output-tab:first-child{border-radius:8px 0 0 0}
+    .output-tab:last-child{border-radius:0 8px 0 0}
+    .output-tab.active{background:#0B1325;color:#1E7BFF;border-bottom:1px solid #0B1325}
+    .output-code{background:#0B1325;border:1px solid #25364D;border-radius:0 0 12px 12px;padding:20px;max-height:500px;overflow:auto;position:relative}
+    .output-code pre{color:#C8D2E0;font-size:12px;line-height:1.7;white-space:pre-wrap;word-break:break-all;font-family:'Consolas','Courier New',monospace}
+
+    .copy-btn{position:absolute;top:12px;right:12px;background:#1E7BFF;color:#fff;border:none;font-size:10px;font-weight:700;padding:6px 14px;border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:0.5px;transition:all .2s}
+    .copy-btn:hover{background:#3B8DFF}
+    .copy-btn.copied{background:#22C55E}
+
+    .instructions-box{background:#0B1325;border:1px solid #25364D;border-radius:12px;padding:20px;margin-top:20px}
+    .instructions-box h3{color:#fff;font-size:14px;margin-bottom:12px}
+    .instructions-box ol{color:#C8D2E0;font-size:13px;line-height:2;padding-left:20px}
+    .instructions-box code{background:#101B2D;color:#1E7BFF;padding:2px 6px;border-radius:4px;font-size:12px}
+
+    /* Variant list page */
+    .variant-form{background:#0B1325;border:1px solid #25364D;border-radius:12px;padding:24px;margin-bottom:16px}
+    .variant-entry{display:grid;grid-template-columns:2fr 1fr 1fr 30px;gap:10px;align-items:center;margin-bottom:8px}
+    .variant-entry input,.variant-entry select{padding:8px 12px;font-size:12px}
+
+    /* Preview */
+    .preview-area{margin-top:24px;background:#050B16;border:1px solid #25364D;border-radius:12px;padding:24px;display:none}
+    .preview-area.show{display:block}
+    .preview-title{color:#fff;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+
+    @media(max-width:767px){
+      .admin-body{padding:20px 16px 60px}
+      .field-row{grid-template-columns:1fr}
+      .app-row{grid-template-columns:1fr}
+      .prop-entry{grid-template-columns:1fr 1fr 30px}
+      .variant-entry{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-header">
+    <span class="admin-logo">BIOCHEM ADMIN</span>
+    <span class="admin-badge">PRODUCT MANAGER</span>
+  </div>
+
+  <div class="admin-nav">
+    <button class="active" onclick="showPanel('detail')">Product Detail Page</button>
+    <button onclick="showPanel('variant')">Product Variant (List Item)</button>
+    <button onclick="showPanel('group')">Product Group</button>
+    <button onclick="showPanel('help')">How To Use</button>
+  </div>
+
+  <div class="admin-body">
+
+    <!-- ═══ PANEL 1: PRODUCT DETAIL PAGE ═══ -->
+    <div id="panel-detail" class="panel active">
+      <h2>Create a Product Detail Page</h2>
+      <p class="panel-desc">Fill out the form below to generate the complete HTML for a product detail page (like Zetafix FF, Zetalub EAC, etc.). Copy the output and paste it into your index.html.</p>
+
+      <!-- Basic Info -->
+      <div class="form-section">
+        <div class="form-section-title">Basic Info</div>
+        <div class="field-row">
+          <div class="field">
+            <label>Product Name</label>
+            <input type="text" id="pd-name" placeholder="e.g. Zetasoft MX200">
+          </div>
+          <div class="field">
+            <label>Page ID (kebab-case)</label>
+            <input type="text" id="pd-id" placeholder="e.g. zetasoft-mx200">
+            <p class="hint">Used in showPage('this-id'). Lowercase, hyphens only.</p>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Category</label>
+            <select id="pd-category">
+              <option value="PRE-TREATMENT">Pre-Treatment</option>
+              <option value="DYEING">Dyeing</option>
+              <option value="PRINTING">Printing</option>
+              <option value="FINISHING">Finishing</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Product Type</label>
+            <input type="text" id="pd-type" placeholder="e.g. SOFTENER, WETTING AGENT">
+          </div>
+        </div>
+        <div class="field">
+          <label>Tagline</label>
+          <input type="text" id="pd-tagline" placeholder="One-line description of the product">
+        </div>
+        <div class="field">
+          <label>Back Button Goes To</label>
+          <select id="pd-back">
+            <option value="pretreatment">Pre-Treatment</option>
+            <option value="dyeing">Dyeing</option>
+            <option value="printing">Printing</option>
+            <option value="finishing">Finishing</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>TDS Filename</label>
+          <input type="text" id="pd-tds" placeholder="e.g. TDS_Zetasoft_MX200.pdf">
+          <p class="hint">Place the PDF file in the tds/ folder with this name.</p>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="form-section">
+        <div class="form-section-title">Description</div>
+        <div class="field">
+          <label>Product Description</label>
+          <textarea id="pd-desc" placeholder="Full product description paragraph(s)..."></textarea>
+        </div>
+      </div>
+
+      <!-- Key Benefits -->
+      <div class="form-section">
+        <div class="form-section-title">Key Benefits</div>
+        <div id="benefits-container" class="benefits-list">
+          <div class="benefit-entry">
+            <button class="remove-btn" onclick="this.parentElement.remove()">Remove</button>
+            <div class="field">
+              <label>Benefit Title</label>
+              <input type="text" class="ben-title" placeholder="e.g. Enhanced Hydrophilicity">
+            </div>
+            <div class="field">
+              <label>Benefit Description</label>
+              <textarea class="ben-desc" placeholder="Explain what this benefit does..." style="min-height:60px"></textarea>
+            </div>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addBenefit()" style="margin-top:12px">+ Add Benefit</button>
+      </div>
+
+      <!-- Properties -->
+      <div class="form-section">
+        <div class="form-section-title">Properties</div>
+        <div id="props-container" class="props-list">
+          <div class="prop-entry">
+            <input type="text" class="prop-key" placeholder="Property name" value="Chemical Constitution">
+            <input type="text" class="prop-val" placeholder="Value">
+            <button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>
+          </div>
+          <div class="prop-entry">
+            <input type="text" class="prop-key" placeholder="Property name" value="Ionic Character">
+            <input type="text" class="prop-val" placeholder="Value">
+            <button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>
+          </div>
+          <div class="prop-entry">
+            <input type="text" class="prop-key" placeholder="Property name" value="pH">
+            <input type="text" class="prop-val" placeholder="Value">
+            <button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>
+          </div>
+          <div class="prop-entry">
+            <input type="text" class="prop-key" placeholder="Property name" value="Specific Gravity at 20°C">
+            <input type="text" class="prop-val" placeholder="Value">
+            <button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>
+          </div>
+          <div class="prop-entry">
+            <input type="text" class="prop-key" placeholder="Property name" value="Physical Form">
+            <input type="text" class="prop-val" placeholder="Value">
+            <button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>
+          </div>
+          <div class="prop-entry">
+            <input type="text" class="prop-key" placeholder="Property name" value="Storage Stability">
+            <input type="text" class="prop-val" placeholder="Value">
+            <button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addProp()" style="margin-top:12px">+ Add Property</button>
+      </div>
+
+      <!-- Applications -->
+      <div class="form-section">
+        <div class="form-section-title">Applications & Dosage</div>
+        <div id="apps-container">
+          <div class="app-entry">
+            <button class="remove-btn" onclick="this.parentElement.remove()">Remove</button>
+            <div class="field">
+              <label>Application Title</label>
+              <input type="text" class="app-title" placeholder="e.g. Exhaust Application">
+            </div>
+            <div class="field">
+              <label>Process Conditions</label>
+              <input type="text" class="app-conditions" placeholder="e.g. Add auxiliaries — hold for 10 to 15 minutes">
+            </div>
+            <div class="app-rows">
+              <div class="app-row">
+                <input type="text" class="app-func" placeholder="Function">
+                <input type="text" class="app-product" placeholder="Product">
+                <input type="text" class="app-dosage" placeholder="Dosage">
+              </div>
+            </div>
+            <button class="add-btn" onclick="addAppRow(this)" style="margin-top:8px">+ Add Row</button>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addApp()" style="margin-top:12px">+ Add Application Table</button>
+      </div>
+
+      <button class="generate-btn" onclick="generateDetailPage()">GENERATE HTML CODE</button>
+
+      <!-- Output -->
+      <div id="detail-output" class="output-area">
+        <div class="output-tabs">
+          <button class="output-tab active" onclick="showOutputTab(this,'detail-html')">Page HTML</button>
+          <button class="output-tab" onclick="showOutputTab(this,'detail-navmap')">NavMap Entry</button>
+        </div>
+        <div id="detail-html" class="output-code" style="display:block">
+          <button class="copy-btn" onclick="copyCode('detail-html-code',this)">COPY</button>
+          <pre id="detail-html-code"></pre>
+        </div>
+        <div id="detail-navmap" class="output-code" style="display:none">
+          <button class="copy-btn" onclick="copyCode('detail-navmap-code',this)">COPY</button>
+          <pre id="detail-navmap-code"></pre>
+        </div>
+
+        <div class="instructions-box">
+          <h3>How to add this to your website:</h3>
+          <ol>
+            <li>Copy the <strong>Page HTML</strong> code above</li>
+            <li>Open <code>index.html</code> in a text editor</li>
+            <li>Find <code>&lt;/main&gt;</code> near the bottom and paste the code <strong>just before</strong> it</li>
+            <li>Copy the <strong>NavMap Entry</strong> code</li>
+            <li>Find <code>const navMap = {</code> in the <code>&lt;script&gt;</code> section</li>
+            <li>Add the NavMap entry inside the navMap object (before the closing <code>}</code>)</li>
+            <li>If this product appears in a variant list, add <code>onclick="showPage('your-page-id')"</code> and class <code>variant-link</code> to that variant's name span</li>
+            <li>Save the file and refresh your browser to test</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══ PANEL 2: VARIANT ITEM ═══ -->
+    <div id="panel-variant" class="panel">
+      <h2>Generate Variant List Items</h2>
+      <p class="panel-desc">Create the HTML for individual product variants that go inside a variants-grid. Use this when adding new products to an existing group.</p>
+
+      <div class="form-section">
+        <div class="form-section-title">Variant Details</div>
+        <div id="variant-container">
+          <div class="variant-entry">
+            <input type="text" class="var-name" placeholder="Product name (e.g. Zetasoft MX200)">
+            <input type="text" class="var-tag" placeholder="Tag (e.g. Softener)">
+            <select class="var-link">
+              <option value="no">No detail page</option>
+              <option value="yes">Has detail page</option>
+            </select>
+            <button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addVariant()" style="margin-top:12px">+ Add Variant</button>
+      </div>
+
+      <div class="field" style="margin-top:16px">
+        <label>Alternate style? (for groups with blue accent)</label>
+        <select id="var-alt">
+          <option value="no">No (default white style)</option>
+          <option value="yes">Yes (alt / blue accent style)</option>
+        </select>
+      </div>
+
+      <button class="generate-btn" onclick="generateVariants()">GENERATE VARIANT HTML</button>
+
+      <div id="variant-output" class="output-area">
+        <div class="output-code" style="border-radius:12px">
+          <button class="copy-btn" onclick="copyCode('variant-code',this)">COPY</button>
+          <pre id="variant-code"></pre>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══ PANEL 3: PRODUCT GROUP ═══ -->
+    <div id="panel-group" class="panel">
+      <h2>Generate a Product Group</h2>
+      <p class="panel-desc">Create a complete product group block (header + variant grid) to add to a category page (Pre-Treatment, Dyeing, etc.).</p>
+
+      <div class="form-section">
+        <div class="form-section-title">Group Info</div>
+        <div class="field-row">
+          <div class="field">
+            <label>Group Name</label>
+            <input type="text" id="grp-name" placeholder="e.g. ZETASOFT">
+          </div>
+          <div class="field">
+            <label>Group Description</label>
+            <input type="text" id="grp-desc" placeholder="e.g. Fabric softener range">
+          </div>
+        </div>
+        <div class="field">
+          <label>Style</label>
+          <select id="grp-style">
+            <option value="default">Default (dark header)</option>
+            <option value="alt">Alternate (blue accent header)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Variants in this Group</div>
+        <div id="grp-variant-container">
+          <div class="variant-entry">
+            <input type="text" class="grpvar-name" placeholder="Product name">
+            <input type="text" class="grpvar-tag" placeholder="Tag">
+            <select class="grpvar-link">
+              <option value="no">No detail page</option>
+              <option value="yes">Has detail page</option>
+            </select>
+            <button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addGrpVariant()" style="margin-top:12px">+ Add Variant</button>
+      </div>
+
+      <button class="generate-btn" onclick="generateGroup()">GENERATE GROUP HTML</button>
+
+      <div id="group-output" class="output-area">
+        <div class="output-code" style="border-radius:12px">
+          <button class="copy-btn" onclick="copyCode('group-code',this)">COPY</button>
+          <pre id="group-code"></pre>
+        </div>
+        <div class="instructions-box">
+          <h3>Where to paste:</h3>
+          <ol>
+            <li>Open <code>index.html</code></li>
+            <li>Find the category page section (e.g. <code>&lt;!-- /page-finishing --&gt;</code>)</li>
+            <li>Paste the group HTML <strong>before</strong> the CTA section of that page</li>
+            <li>Update the variant count badge if needed</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══ PANEL 4: HELP ═══ -->
+    <div id="panel-help" class="panel">
+      <h2>How To Use This Admin Panel</h2>
+      <p class="panel-desc">This tool generates HTML code that you paste into your website's index.html file.</p>
+
+      <div class="form-section">
+        <div class="form-section-title">Overview</div>
+        <div style="color:#C8D2E0;font-size:13px;line-height:2">
+          <p>Your Biochem Technologies website is a <strong>single-page application (SPA)</strong> built in one <code>index.html</code> file. All pages are <code>&lt;div&gt;</code> sections that show/hide when you navigate.</p>
+          <br>
+          <p><strong>This admin panel generates 3 types of code:</strong></p>
+          <br>
+          <p><strong>1. Product Detail Page</strong> — A complete product page with description, benefits, properties, applications, and download button. This is what visitors see when they click on a specific product.</p>
+          <br>
+          <p><strong>2. Variant List Item</strong> — Individual product entries that appear in the grid on category pages (e.g., "Zetasoft AR6" with a "Softener" tag).</p>
+          <br>
+          <p><strong>3. Product Group</strong> — A complete group block with a header and variant grid (e.g., the entire "ZETASOFT" section with its 4 variants).</p>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Step-by-Step Workflow</div>
+        <div style="color:#C8D2E0;font-size:13px;line-height:2">
+          <p><strong>Adding a brand new product with a detail page:</strong></p>
+          <ol style="padding-left:20px;margin:8px 0 16px">
+            <li>Go to <strong>"Product Detail Page"</strong> tab</li>
+            <li>Fill out all the fields</li>
+            <li>Click <strong>"Generate HTML Code"</strong></li>
+            <li>Copy the <strong>Page HTML</strong> and paste it before <code>&lt;/main&gt;</code> in index.html</li>
+            <li>Copy the <strong>NavMap Entry</strong> and add it inside the <code>navMap</code> object in the script</li>
+            <li>If the product is in an existing group, add <code>variant-link</code> class and <code>onclick</code> to its variant span</li>
+            <li>Place the TDS PDF in the <code>tds/</code> folder</li>
+            <li>Save and test</li>
+          </ol>
+          <p><strong>Adding a new product group to a category page:</strong></p>
+          <ol style="padding-left:20px;margin:8px 0 16px">
+            <li>Go to <strong>"Product Group"</strong> tab</li>
+            <li>Fill in the group name, description, and variants</li>
+            <li>Click <strong>"Generate Group HTML"</strong></li>
+            <li>Paste the code into the appropriate category page section</li>
+          </ol>
+          <p><strong>Adding variants to an existing group:</strong></p>
+          <ol style="padding-left:20px;margin:8px 0">
+            <li>Go to <strong>"Product Variant"</strong> tab</li>
+            <li>Add the variant names and tags</li>
+            <li>Click <strong>"Generate Variant HTML"</strong></li>
+            <li>Paste inside the existing <code>&lt;ul class="variants-grid"&gt;</code></li>
+            <li>Update the badge count in the group header</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Important Notes</div>
+        <div style="color:#C8D2E0;font-size:13px;line-height:2">
+          <ul style="padding-left:20px">
+            <li>Always <strong>back up index.html</strong> before making changes</li>
+            <li>The <strong>Page ID</strong> must be unique and kebab-case (e.g., <code>zetasoft-mx200</code>)</li>
+            <li>If a group has an <strong>odd number of variants</strong>, add a placeholder: <code>&lt;li class="variant-item" style="background:transparent;border:none;box-shadow:none" aria-hidden="true"&gt;&lt;/li&gt;</code></li>
+            <li>TDS PDFs go in the <code>tds/</code> folder</li>
+            <li>After editing, commit and push to GitHub to update the live site</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /admin-body -->
+
+
+  <script>
+    /* ── Panel switching ── */
+    function showPanel(id) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.admin-nav button').forEach(b => b.classList.remove('active'));
+      document.getElementById('panel-' + id).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    /* ── Output tab switching ── */
+    function showOutputTab(btn, id) {
+      const parent = btn.closest('.output-area');
+      parent.querySelectorAll('.output-tab').forEach(t => t.classList.remove('active'));
+      parent.querySelectorAll('.output-code').forEach(c => c.style.display = 'none');
+      btn.classList.add('active');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    /* ── Copy to clipboard ── */
+    function copyCode(preId, btn) {
+      const text = document.getElementById(preId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'COPIED!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'COPY'; btn.classList.remove('copied'); }, 2000);
+      });
+    }
+
+    /* ── Helper: escape HTML ── */
+    function esc(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    /* ── Add benefit ── */
+    function addBenefit() {
+      const c = document.getElementById('benefits-container');
+      const div = document.createElement('div');
+      div.className = 'benefit-entry';
+      div.innerHTML = '<button class="remove-btn" onclick="this.parentElement.remove()">Remove</button><div class="field"><label>Benefit Title</label><input type="text" class="ben-title" placeholder="e.g. Enhanced Hydrophilicity"></div><div class="field"><label>Benefit Description</label><textarea class="ben-desc" placeholder="Explain what this benefit does..." style="min-height:60px"></textarea></div>';
+      c.appendChild(div);
+    }
+
+    /* ── Add property ── */
+    function addProp() {
+      const c = document.getElementById('props-container');
+      const div = document.createElement('div');
+      div.className = 'prop-entry';
+      div.innerHTML = '<input type="text" class="prop-key" placeholder="Property name"><input type="text" class="prop-val" placeholder="Value"><button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>';
+      c.appendChild(div);
+    }
+
+    /* ── Add application table ── */
+    function addApp() {
+      const c = document.getElementById('apps-container');
+      const div = document.createElement('div');
+      div.className = 'app-entry';
+      div.innerHTML = '<button class="remove-btn" onclick="this.parentElement.remove()">Remove</button><div class="field"><label>Application Title</label><input type="text" class="app-title" placeholder="e.g. Dyeing Bath"></div><div class="field"><label>Process Conditions</label><input type="text" class="app-conditions" placeholder="e.g. Add auxiliaries — hold for 10 to 15 minutes"></div><div class="app-rows"><div class="app-row"><input type="text" class="app-func" placeholder="Function"><input type="text" class="app-product" placeholder="Product"><input type="text" class="app-dosage" placeholder="Dosage"></div></div><button class="add-btn" onclick="addAppRow(this)" style="margin-top:8px">+ Add Row</button>';
+      c.appendChild(div);
+    }
+
+    /* ── Add row to application table ── */
+    function addAppRow(btn) {
+      const rows = btn.previousElementSibling;
+      const div = document.createElement('div');
+      div.className = 'app-row';
+      div.innerHTML = '<input type="text" class="app-func" placeholder="Function"><input type="text" class="app-product" placeholder="Product"><input type="text" class="app-dosage" placeholder="Dosage">';
+      rows.appendChild(div);
+    }
+
+    /* ── Add variant ── */
+    function addVariant() {
+      const c = document.getElementById('variant-container');
+      const div = document.createElement('div');
+      div.className = 'variant-entry';
+      div.innerHTML = '<input type="text" class="var-name" placeholder="Product name"><input type="text" class="var-tag" placeholder="Tag"><select class="var-link"><option value="no">No detail page</option><option value="yes">Has detail page</option></select><button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>';
+      c.appendChild(div);
+    }
+
+    function addGrpVariant() {
+      const c = document.getElementById('grp-variant-container');
+      const div = document.createElement('div');
+      div.className = 'variant-entry';
+      div.innerHTML = '<input type="text" class="grpvar-name" placeholder="Product name"><input type="text" class="grpvar-tag" placeholder="Tag"><select class="grpvar-link"><option value="no">No detail page</option><option value="yes">Has detail page</option></select><button class="prop-remove" onclick="this.parentElement.remove()">&times;</button>';
+      c.appendChild(div);
+    }
+
+    /* ══════════════════════════════════════════
+       GENERATE: Product Detail Page
+    ══════════════════════════════════════════ */
+    function generateDetailPage() {
+      const name = document.getElementById('pd-name').value.trim();
+      const id = document.getElementById('pd-id').value.trim();
+      const cat = document.getElementById('pd-category').value;
+      const type = document.getElementById('pd-type').value.trim();
+      const tagline = document.getElementById('pd-tagline').value.trim();
+      const backPage = document.getElementById('pd-back').value;
+      const tds = document.getElementById('pd-tds').value.trim();
+      const desc = document.getElementById('pd-desc').value.trim();
+
+      if (!name || !id) { alert('Please fill in Product Name and Page ID.'); return; }
+
+      const backLabels = { pretreatment: 'Pre-Treatment', dyeing: 'Dyeing', printing: 'Printing', finishing: 'Finishing' };
+
+      // Benefits
+      let benefitsHTML = '';
+      document.querySelectorAll('#benefits-container .benefit-entry').forEach(entry => {
+        const t = entry.querySelector('.ben-title').value.trim();
+        const d = entry.querySelector('.ben-desc').value.trim();
+        if (t) {
+          benefitsHTML += `\n            <li class="pd-benefit">\n              <div class="pd-benefit-title">${esc(t)}</div>\n              <p class="pd-benefit-desc">${esc(d)}</p>\n            </li>`;
+        }
+      });
+
+      // Properties
+      let propsHTML = '';
+      document.querySelectorAll('#props-container .prop-entry').forEach(entry => {
+        const k = entry.querySelector('.prop-key').value.trim();
+        const v = entry.querySelector('.prop-val').value.trim();
+        if (k) {
+          propsHTML += `\n            <tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`;
+        }
+      });
+
+      // Applications
+      let appsHTML = '';
+      document.querySelectorAll('#apps-container .app-entry').forEach(entry => {
+        const title = entry.querySelector('.app-title').value.trim();
+        const conditions = entry.querySelector('.app-conditions').value.trim();
+        if (!title) return;
+
+        let rowsHTML = '';
+        const rows = entry.querySelectorAll('.app-row');
+        rows.forEach((row, i) => {
+          const func = row.querySelector('.app-func').value.trim();
+          const prod = row.querySelector('.app-product').value.trim();
+          const dose = row.querySelector('.app-dosage').value.trim();
+          if (func) {
+            const condAttr = i === 0 && conditions ? ` <td rowspan="${rows.length}">${esc(conditions)}</td>` : '';
+            rowsHTML += `\n              <tr><td>${esc(func)}</td><td class="pd-app-highlight">${esc(prod)}</td><td>${esc(dose)}</td>${condAttr}</tr>`;
+          }
+        });
+
+        appsHTML += `\n\n          <p class="pd-app-label">${esc(title)}</p>\n          <table class="pd-app-table">\n            <thead><tr><th>Function</th><th>Product</th><th>Dosage</th><th>Process Conditions</th></tr></thead>\n            <tbody>${rowsHTML}\n            </tbody>\n          </table>`;
+      });
+
+      // Build full page HTML
+      const html = `
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PAGE: ${name.toUpperCase()} -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <div id="page-${id}" class="page pd-page" role="region" aria-label="${esc(name)}">
+
+      <div class="pd-hero">
+        <button class="pd-back" onclick="showPage('${backPage}')">← Back to ${backLabels[backPage]}</button>
+        <div class="pd-cat-badge">${cat} · ${esc(type.toUpperCase())}</div>
+        <h1 class="pd-title">${esc(name)}</h1>
+        <p class="pd-tagline">${esc(tagline)}</p>
+      </div>
+
+      <div class="pd-body">
+
+        <div class="pd-section">
+          <div class="pd-section-title">📋 Product Description</div>
+          <p class="pd-desc">${esc(desc)}</p>
+        </div>${benefitsHTML ? `
+
+        <div class="pd-section">
+          <div class="pd-section-title">✅ Key Benefits</div>
+          <ul class="pd-benefits">${benefitsHTML}
+          </ul>
+        </div>` : ''}${propsHTML ? `
+
+        <div class="pd-section">
+          <div class="pd-section-title">⚗️ Properties</div>
+          <table class="pd-props-table">${propsHTML}
+          </table>
+        </div>` : ''}${appsHTML ? `
+
+        <div class="pd-section">
+          <div class="pd-section-title">🔬 Applications &amp; Dosage</div>${appsHTML}
+        </div>` : ''}
+
+        <div class="pd-section">
+          <div class="pd-section-title">📥 Downloads &amp; Enquiry</div>
+          <div class="pd-actions">${tds ? `
+            <a href="tds/${esc(tds)}" download class="pd-download-btn">⬇ Download TDS</a>` : ''}
+            <button class="pd-enquire-btn" onclick="showPage('contact')">✉ Request Sample / Enquire</button>
+          </div>
+          <p style="margin-top:16px;font-size:11px;color:#999;line-height:1.6">Biochem Technologies retains the right to alter product and technical information. The information provided serves as a guideline and is believed to be accurate. Users are advised to assess recommendations before actual application. Safety Data Sheet (SDS) available upon request.</p>
+        </div>
+
+      </div>
+    </div><!-- /page-${id} -->`;
+
+      document.getElementById('detail-html-code').textContent = html;
+      document.getElementById('detail-navmap-code').textContent = `        '${id}': 'nav-products',`;
+
+      document.getElementById('detail-output').classList.add('show');
+      document.getElementById('detail-output').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ══════════════════════════════════════════
+       GENERATE: Variant Items
+    ══════════════════════════════════════════ */
+    function generateVariants() {
+      const isAlt = document.getElementById('var-alt').value === 'yes';
+      let html = '';
+
+      document.querySelectorAll('#variant-container .variant-entry').forEach(entry => {
+        const name = entry.querySelector('.var-name').value.trim();
+        const tag = entry.querySelector('.var-tag').value.trim();
+        const hasLink = entry.querySelector('.var-link').value === 'yes';
+        if (!name) return;
+
+        const altClass = isAlt ? ' alt' : '';
+        const pageId = name.toLowerCase().replace(/\s+/g, '-');
+        const nameClass = hasLink ? `variant-name variant-link" onclick="showPage('${pageId}')` : 'variant-name';
+
+        html += `          <li class="variant-item${altClass}"><span class="${nameClass}">${esc(name)}</span><span class="variant-tag">${esc(tag)}</span></li>\n`;
+      });
+
+      document.getElementById('variant-code').textContent = html;
+      document.getElementById('variant-output').classList.add('show');
+      document.getElementById('variant-output').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ══════════════════════════════════════════
+       GENERATE: Product Group
+    ══════════════════════════════════════════ */
+    function generateGroup() {
+      const name = document.getElementById('grp-name').value.trim();
+      const desc = document.getElementById('grp-desc').value.trim();
+      const isAlt = document.getElementById('grp-style').value === 'alt';
+
+      if (!name) { alert('Please fill in the group name.'); return; }
+
+      let variantsHTML = '';
+      let count = 0;
+
+      document.querySelectorAll('#grp-variant-container .variant-entry').forEach(entry => {
+        const vname = entry.querySelector('.grpvar-name').value.trim();
+        const vtag = entry.querySelector('.grpvar-tag').value.trim();
+        const hasLink = entry.querySelector('.grpvar-link').value === 'yes';
+        if (!vname) return;
+        count++;
+
+        const altClass = isAlt ? ' alt' : '';
+        const pageId = vname.toLowerCase().replace(/\s+/g, '-');
+        const nameClass = hasLink ? `variant-name variant-link" onclick="showPage('${pageId}')` : 'variant-name';
+
+        variantsHTML += `          <li class="variant-item${altClass}"><span class="${nameClass}">${esc(vname)}</span><span class="variant-tag">${esc(vtag)}</span></li>\n`;
+      });
+
+      // Add placeholder if odd count
+      if (count % 2 !== 0) {
+        const altClass = isAlt ? ' alt' : '';
+        variantsHTML += `          <li class="variant-item${altClass}" style="background:transparent;border:none;box-shadow:none" aria-hidden="true"></li>\n`;
+      }
+
+      const headerClass = isAlt ? ' alt' : '';
+      const nameClass = isAlt ? ' dark' : '';
+      const badgeClass = isAlt ? ' dark' : '';
+
+      const html = `      <article class="product-group" aria-label="${esc(name)} – ${esc(desc)}">
+        <div class="group-header${headerClass}"><div><h2 class="group-name${nameClass}">${esc(name.toUpperCase())}</h2><p class="group-sub">${esc(desc)}</p></div><span class="group-badge${badgeClass}">${count} VARIANT${count !== 1 ? 'S' : ''}</span></div>
+        <ul class="variants-grid">
+${variantsHTML}        </ul>
+      </article>`;
+
+      document.getElementById('group-code').textContent = html;
+      document.getElementById('group-output').classList.add('show');
+      document.getElementById('group-output').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
