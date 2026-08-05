@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+Sitemap: https://soumen-patra01.github.io/biochem-website/sitemap.xml
